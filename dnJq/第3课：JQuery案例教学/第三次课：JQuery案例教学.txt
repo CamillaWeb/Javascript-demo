@@ -1,0 +1,8 @@
+﻿回顾：
+	1.JQuery框架模块
+	2.在线api文档 http://hemin.cn/jq/
+	3.jquery模块学习
+知识点：
+	1.case1	基本功能
+	2.case2	动态添加
+	3.case3	跨域数据加载

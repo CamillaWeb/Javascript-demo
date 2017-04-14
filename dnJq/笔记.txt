@@ -1,0 +1,2 @@
+1、jQuery版本下载http://www.jq22.com/jquery-info122
+2、了解Prototype.js（jQuery出现之前主流框架），对js提升有帮助

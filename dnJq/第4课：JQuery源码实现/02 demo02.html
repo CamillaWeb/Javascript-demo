@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+<script src="../jquery.min.js"></script>
+<script>
+	function Proxy(){
+	  
+	}
+	
+	Proxy.prototype = {
+		run : function(){
+		   alert("run");	
+		},
+		show : function(){
+		   alert("show");
+		}
+	}
+	/*Proxy.prototype.run = function(){
+		alert(111);
+	}*/
+	
+	var pro = new Proxy();
+	var pro2 = new Proxy();
+	pro.run();
+	pro2.run();
+
+</script>
+</body>
+</html>
+ 

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<link rel="stylesheet" href="assets/plug-in/bootstrap-3.3.0/css/bootstrap.min.css">
+<style>
+.bs-example {width:70%;margin:auto;border:1px solid #ddd;margin-top:50px;font-family:Arial,"Microsoft Yahei";}
+.bs-example .table tr td .iname {width:240px;text-align:center;}
+.bs-example .table tr td .remove {color:#c7254e;}
+.bs-example .table tr td .count {position:relative;}
+.bs-example .table tr td .count input {width:39px;height:25px;line-height:25px;border:1px solid #aaa;color:#343434;text-align:center;padding:4px 0;background-color:#fff;}
+.bs-example .table tr td .count a {padding:4px 6px;border:1px solid #bbb;}
+.bs-example .table .template,.bs-example .table .template2{ display:none;}
+</style>
+</head>
+
+<body>
+	<div class="bs-example">
+		<form onSubmit="return false">
+			<div class="button-bar">
+				<br>
+				&nbsp;&nbsp;&nbsp;<button id="add" class="btn btn-primary btn-lg">添加商品</button>
+				<br>
+			</div>
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th><label><input name="all" type="checkbox">全选</label></th>
+			      <th>商品信息</th>
+			      <th>单价</th>
+			      <th>数量</th>
+			      <th>金额</th>
+			      <th>操作</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<tr class="template">
+			      <td><label><input name="item" type="checkbox">
+                    <span>
+                        <img src="assets/images/LOGO.png" width="80" height="80">
+                        <input type="file"/>
+                    </span>
+                  </label></td>
+			      <td><a href="#" class="iname" contenteditable="true">请填写商品信息</a></td>
+			      <td>￥<span class="amount" contenteditable="true">30.00</span></td>
+			      <td>
+			      	<div class="count">
+			      		<a href="javascript:void(0)" class="sub">-</a>
+                        <input name="count[0]" value="1">
+                        <a href="javascript:void(0)" class="add">+</a>
+			      	</div>
+			      </td>
+			      <td>￥<span class="total">30.00</span></td>
+			      <td><a href="#" class="remove"><span class="glyphicon glyphicon-minus"></span>删除</a></td>
+			    </tr>
+			    
+			    <tr class="template2">
+			      <td><label><input name="item" type="checkbox"><img src="#"></label></td>
+			      <td><a href="#" class="iname"> </a></td>
+			      <td>￥<span class="amount"> </span></td>
+			      <td>
+			      	<div class="count">
+			      		<a href="javascript:void(0)" class="sub">-</a>
+                        <input name="count[2]" value="1">
+                        <a href="javascript:void(0)" class="add">+</a>
+			      	</div>
+			      </td>
+			      <td>￥<span class="total"> </span></td>
+			      <td><a href="#" class="remove"><span class="glyphicon glyphicon-minus"></span>删除</a></td>
+			    </tr>
+			  </tbody>
+			</table>
+			<div class="total-bar">
+				<div class="sum-count">
+					已选商品<span>0</span>件
+				</div>
+				<div class="sum-amount">
+					合计（不含运费）：
+					<span></span>
+				</div>
+			</div>
+		</form>
+	</div>
+
+<script src="../jquery.min.js"></script>
+<script>
+	  $(function(){
+			$(".bs-example table .count input").prop("readonly",true);
+			$(".bs-example table .count a").on("click",function(event,isNotCount){
+				var $this = $(this);
+				//var $num = $this.parent().find("input"); //jquery
+				var num = $this.parent().find("input")[0]; //javascript
+				if(!isNotCount){   //如果不计算
+					if($this.hasClass("add")){
+						//$num.val(Number($num.val())+1);
+						num.value++;
+					}else{
+						//$num.val(Number($num.val())-1);
+						num.value = (num.value==1)?1:num.value-1;
+					}
+				}
+				
+				//每行金额数
+				var $row = $this.parents("tr");
+				var rowTotal = Number($row.find(".amount").text())*num.value;
+				rowTotal = rowTotal.toFixed(2);
+				$row.find(".total").text(rowTotal);
+				countTotal(); 
+			});
+			
+			//删除
+			$(".bs-example table tr td .remove").on("click",function(){
+				$(this).parents("tr").remove();
+				countTotal(); 
+			});
+			
+			$(".bs-example table tr label input[name=item]").on("change",function(){
+			   countTotal(); 
+			});
+			
+			function countTotal(){
+			  var total = 0;
+			  var count = $(".bs-example table tr label input:checked").each(function(){
+				  total += Number($(this).parents("tr").find(".total").text());
+			  }).size();  
+			  $(".sum-count span").text(count);
+			  $(".sum-amount span").text(total.toFixed(2));
+			}	  
+			
+			$(".bs-example table tr td label span input[type=file]").on("change",function(){
+				var img = this.value;
+				if(!/\.(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(img))  
+				{  
+				  alert("图片类型必须是.gif,jpeg,jpg,png中的一种")  
+				  return false;  
+				}	  
+				//出于本地文件访问安全考虑，不能直接通过本地图片的URL进行展现
+				//需要通过window.URL.createObjectURL创建一个安全的URL
+				var f = this.files[0];
+				var src = window.URL.createObjectURL(f);	  
+				$(this).prev().attr("src",src);
+			});
+			
+			//改变单价
+			$(".amount[contenteditable]").on("blur",function(){
+				var $text = Number($(this).text());
+				 $(this).text($text.toFixed(2));
+				 $(this).parents("tr").find(".add").trigger("click",true);
+			});
+			
+			//动态添加行
+			$("#add").on("click",function(){
+				$(".bs-example .table .template").clone(true).removeClass("template").appendTo(".bs-example .table tbody");//clone(true)表示元素绑定的事件也被克隆了
+			});
+			
+			//全选、不选
+			$("input[type=checkbox][name=all]").on("change",function(){
+				$(".bs-example table tr label input").prop("checked",this.checked); 
+				countTotal();
+			});
+	  })
+
+	  myJsonp("list.js",getData);
+	  function getData(data){
+		  var $template = $(".bs-example .table tr.template2");
+		  var $tbody = $(".bs-example .table tbody");
+		  $.each(data,function(i,o){
+			  var $row = $template.clone(true).show().removeClass("template2");
+			  $row.find("img").attr("src",o.img);
+			  $row.find(".iname").text(o.name);
+			  $row.find(".amount").text(o.amount);
+			  $row.find(".count input").val(o.count);
+			  $row.find(".total").text(o.total);
+			  $tbody.append($row);
+		  });
+	  }
+	  
+	  function myJsonp(url){
+		  var script = document.createElement("script");
+		  script.src = url;
+		  document.body.appendChild(script);
+	  } 
+</script>
+</body>
+</html>

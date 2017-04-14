@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<link rel="stylesheet" href="assets/plug-in/bootstrap-3.3.0/css/bootstrap.min.css">
+<style>
+.bs-example {width:70%;margin:auto;border:1px solid #ddd;margin-top:50px;font-family:Arial,"Microsoft Yahei";}
+.bs-example .table tr td .iname {width:240px;text-align:center;}
+.bs-example .table tr td .remove {color:#c7254e;}
+.bs-example .table tr td .count {position:relative;}
+.bs-example .table tr td .count input {width:39px;height:25px;line-height:25px;border:1px solid #aaa;color:#343434;text-align:center;padding:4px 0;background-color:#fff;}
+.bs-example .table tr td .count a {padding:4px 6px;border:1px solid #bbb;}
+</style>
+</head>
+
+<body>
+	<div class="bs-example">
+		<form action="/最终提交的路径">
+			<div class="button-bar">
+				<br>
+				&nbsp;&nbsp;&nbsp;<button id="add" class="btn btn-primary btn-lg">添加商品</button>
+				<br>
+			</div>
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th><label><input name="all" type="checkbox">全选</label></th>
+			      <th>商品信息</th>
+			      <th>单价</th>
+			      <th>数量</th>
+			      <th>金额</th>
+			      <th>操作</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<tr>
+			      <td><label><input name="item" type="checkbox"><img src="assets/images/p1.jpg"></label></td>
+			      <td><a href="#" class="iname">创意烤漆加厚云朵隔板搁板墙壁置物架客厅影视墙装饰架装修层板</a></td>
+			      <td>￥<span class="amount">30.00</span></td>
+			      <td>
+			      	<div class="count">
+			      		<a href="javascript:void(0)" class="sub">-</a>
+                        <input name="count[0]" value="1">
+                        <a href="javascript:void(0)" class="add">+</a>
+			      	</div>
+			      </td>
+			      <td>￥<span class="total">30.00</span></td>
+			      <td><a href="#" class="remove"><span class="glyphicon glyphicon-minus"></span>删除</a></td>
+			    </tr>
+			    <tr>
+			      <td><label><input name="item" type="checkbox"><img src="assets/images/p2.jpg"></label></td>
+			      <td><a href="#" class="iname">U型隔板墙上书架层板墙柜搁架创意机顶盒房间装饰墙</a></td>
+			      <td>￥<span class="amount">40.50</span></td>
+			      <td>
+			      	<div class="count">
+			      		<a href="javascript:void(0)" class="sub">-</a>
+                        <input name="count[1]" value="1">
+                        <a href="javascript:void(0)" class="add">+</a>
+			      	</div>
+			      </td>
+			      <td>￥<span class="total">40.50</span></td>
+			      <td><a href="#" class="remove"><span class="glyphicon glyphicon-minus"></span>删除</a></td>
+			    </tr>
+			    <tr>
+			      <td><label><input name="item" type="checkbox"><img src="assets/images/p3.jpg"></label></td>
+			      <td><a href="#" class="iname">墙面置物架壁挂架创意格子背景墙装饰架墙壁架隔板层板搁板壁柜</a></td>
+			      <td>￥<span class="amount">50.00</span></td>
+			      <td>
+			      	<div class="count">
+			      		<a href="javascript:void(0)" class="sub">-</a>
+                        <input name="count[2]" value="1">
+                        <a href="javascript:void(0)" class="add">+</a>
+			      	</div>
+			      </td>
+			      <td>￥<span class="total">50.00</span></td>
+			      <td><a href="#" class="remove"><span class="glyphicon glyphicon-minus"></span>删除</a></td>
+			    </tr>
+			  </tbody>
+			</table>
+			<div class="total-bar">
+				<div class="sum-count">
+					已选商品<span>0</span>件
+				</div>
+				<div class="sum-amount">
+					合计（不含运费）：
+					<span></span>
+				</div>
+			</div>
+		</form>
+	</div>
+
+<script src="../jquery.min.js"></script>
+<script>
+$(function(){
+	  $(".bs-example table .count a").on("click",function(){
+		  var $this = $(this);
+		  //var $num = $this.parent().find("input"); //jquery
+		  var num = $this.parent().find("input")[0]; //javascript
+		  if($this.hasClass("add")){
+			  //$num.val(Number($num.val())+1);
+			  num.value++;
+		  }else{
+			  //$num.val(Number($num.val())-1);
+			  num.value = (num.value==1)?1:num.value-1;
+		  }
+		  
+		  //每行金额数
+		  var $row = $this.parents("tr");
+		  var rowTotal = Number($row.find(".amount").text())*num.value;
+		  rowTotal = rowTotal.toFixed(2);
+		  $row.find(".total").text(rowTotal);
+		  countTotal(); 
+	  });
+	  
+	  //删除
+	  $(".bs-example table tr td .remove").on("click",function(){
+		  $(this).parents("tr").remove();
+		  countTotal(); 
+	  });
+	  
+	  $(".bs-example table tr label input[name=item]").on("change",function(){
+		 countTotal(); 
+	  });
+	  
+	  function countTotal(){
+		var total = 0;
+		var count = $(".bs-example table tr label input:checked").each(function(){
+			total += Number($(this).parents("tr").find(".total").text());
+		}).size();  
+		$(".sum-count span").text(count);
+		$(".sum-amount span").text(total.toFixed(2));
+	  }	  
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<script src="../jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <p class="text">this is line 1</p>
+    </div>
+    <div class="box">this is line 2 </div>  
+    <div class="box" id="test">this is line 3 </div> 
+    <div class="box">this is line 4 </div>   
+	<script>
+	 /*var $test = $("#test");
+	 
+     //alert($test.index());
+	 
+	 $test.data("key","232");
+	 alert($test.data("key"));*/
+	 
+	//javascript实现data
+	function myJquery(id){
+		 var txt = document.getElementById(id);
+		 txt.data = function(key,value){
+			 if(arguments.length == 1){
+				 return this[key];
+		     }else{
+			    this[key] = value; 
+		     }
+	     }
+		 return txt;
+	 }
+	 myJquery("test").data("name","zcp");;
+     alert(myJquery("test").data("name"));
+	</script>
+</body>
+</html>

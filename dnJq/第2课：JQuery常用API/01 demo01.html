@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<script src="../jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <p class="text">this is line 1</p>
+    </div>
+    <div>
+        <p class="text">this is line 2</p>
+    </div>    
+	<script>
+		var $box = $(".box");
+		$box.css("color","red");
+		var $txt = $(".text",$box);
+		$txt.text("hello");
+		
+		//新增div
+		var $myDiv = $("<div class='box'></div>");
+		$myDiv.text("this is new add html");
+		$(document.body).append($myDiv);
+		
+		$(function(){
+		    //code	
+		});
+		
+	</script>
+</body>
+</html>

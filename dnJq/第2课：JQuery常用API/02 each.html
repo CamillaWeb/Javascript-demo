@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<script src="../jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <p class="text">this is line 1</p>
+    </div>
+    <div>
+        <p class="text">this is line 2</p>
+    </div>    
+	<script>
+		var $text = $(".text");
+		var context = [];
+		/*for(var i=0;i<$text.length;i++){
+		    context.push($text[i].innerHTML);	
+		}*/
+		
+		//迭代Jquery对象
+		$.each($text,function(){    //等同于$text.each(function(){});
+		   context.push(this.innerHTML);	
+		});
+		alert(context);
+		
+		//迭代数组
+		$.each(context,function(i,o){
+		   console.log("第"+i+"个内容是"+o);	
+		});
+		
+		//迭代对象
+		var star = {
+		   name : 'star',
+		   age : 36,
+		   sex : "男"	
+		}
+		$.each(star,function(key,value){
+		   console.log(key+":"+value);	
+		});
+	
+	</script>
+</body>
+</html>

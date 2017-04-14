@@ -1,0 +1,71 @@
+﻿回顾：
+	无
+知识点：
+	1.内存的概念
+		内存是什么？3W1H？
+		what（什么东西）;when（什么时候）；where（在哪里用）；how（怎么用）
+		电脑=>人脑
+		内存=>记忆（momery）
+		运行中=>清醒中
+		开机=>睡醒
+		* 学习程序最重要的一个捷径：从实际生活中去理解去对比
+
+		操作系统=>程序(平台)
+		当所有在运行的系统的总内存大小超过操作系统最大限制的时候，就蓝屏了（蓝屏之前有可能先挣扎一下，电脑无法响应），操作系统程序内存溢出（out of monery）
+	2.浏览器内存解析
+		HTML文档加载流程
+		程序员（说话、有自己的母语、会英文单词会数字）=>
+		编程语言（协议） => 浏览器这个程序进行交流（0101010101）
+
+		前端程序员 => HTML => 浏览器进行交流
+		服务端程序员 => JAVA => 服务器交流
+
+		浏览器加载HTML文档
+		* 所有的程序都是运行在内存中的
+		* 从上到下 从左到右 （一行一行）
+		例子
+			内存结构图分为三块
+			a.栈=>变量 小
+				例子：var a;//定义一个变量，变量里面存放的是数据的内存地址
+				javascript是一门弱类型的语言
+			b.堆=>对象 大
+				对象是内存中的流动人口
+			c.池=>常量 中
+				javascript中所有的常量都会在常量池
+				0-9 a-z A-Z !@#$%^&*() 中文
+				常量的地址是唯一且不会改变，常量是内存中常住人口
+
+			* 内存中所有的数据都有一个地址，这个地址叫做内存地址
+			* 浏览器程序会管理好内存中DOM树，只要DOM树中有任何一个DOM元素发生了任何改变，就会刷新页面
+		Q：前端JAVASCRIPT写程序的目的是什么？
+			无非就是通过逻辑代码操作内存中的DOM，刷新页面，呈现给用户交互
+		Q：JAVASCRIPT已经能够操作DOM了，为什么还要JQUERY
+			JQUERY可以用来大大提高程序员的开发效率，大大提高程序员通过JAVASCRIPT操作DOM的效率
+	3.JQuery简介
+		* JAVASCRIPT只能操作单个的DOM，JQuery可以批量操作DOM
+		JAVASCRIPT例子：
+			var arr = document.querySelectorAll("div.myClass");
+			for(var i=0;i<arr.length;i++){
+				arr[i].innerText = "xxx";
+			}
+		JQuery例子：
+			$("div.myClass").text("xxx");
+
+	4.JQuery批量管理DOM的内存结构（代理模式）
+		JQuery核心检索函数返回的jquery对象，其本质就是一个jquery自己扩展的数组对象
+	5.JQuery版本 Prototype.js
+                http://www.jq22.com/jquery-info122
+		JQuery.1.x.x  jquery的成名曲
+			jquery代理模式 链形操作方式	动画处理 ajax的封装 事件处理 [浏览器兼容]...
+			* jquery.1.11.3.js
+			* 当用户对IE低版本浏览器有兼容要求的时候，推荐使用1.11.3
+		JQuery.2.x.x  锦上添花
+			官方声明不再兼容IE6/7/8
+			大大提升了jquery的性能
+			放弃IE原因很简单，因为移动互联网时代（H5）
+			* jquery.2.1.4.js
+			* 当用户可以放弃低版本IE浏览器的时候，一定要用2.1.4
+			* $o.on()  $o.bind() 官方说推荐使用on
+		JQuery.3.x.x  迷之JQuery3
+			重构了代码，去掉了多余的api，例如 $o.on()  $o.bind()，jquery3干掉了bind
+			对ES6语法提供了更多支持

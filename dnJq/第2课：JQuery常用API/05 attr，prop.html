@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<script src="../jquery.min.js"></script>
+<style>
+.hover{ padding:10px;}
+</style>
+</head>
+
+<body>
+       <!-- attr() 就是用来操作标签的属性
+			标签属性、自定义标签属性...
+			prop() 就是用来操作标签的状态,
+			比如checked、selected、disabled、readonly...-->
+            
+    <button id="btn01">按钮1</button>
+    <button id="btn02">按钮2</button>
+    <button id="btn03">按钮3</button>
+    <input id="btn04" type="text"/>
+	<script>
+      $("#btn01").attr("class","hover");
+	  $("#btn02").attr("abc","ee");
+	  $("#btn03").prop("disabled",true);
+	  $("#btn04").prop("readonly",true);
+	  
+	  /*$("#btn01").removeAttr("class");
+	  $("#btn03").removeProp("disabled");*/
+	</script>
+</body>
+</html>

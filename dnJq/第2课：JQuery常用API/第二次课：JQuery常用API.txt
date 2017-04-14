@@ -1,0 +1,62 @@
+﻿回顾：
+	1.内存的概念
+	2.浏览器内存解析
+	3.JQuery简介
+	4.JQuery批量管理DOM的内存结构（代理模式）
+	5.JQuery版本
+知识点：
+	1.JQuery框架模块
+		a.dom批量检索及操作(属性、样式、位置、尺寸、事件等)
+			css()
+		b.ajax数据交互
+			get
+			post
+			getJSON
+			load
+			jsonp
+		c.动画(过渡)效果
+			window.setInterval(dom移动,time);
+			jquery.1.11.3.js
+			* 能用css（css3）解决的页面效果问题，不要用javascript去做
+		d.工具
+			浏览器类型版本检测...
+		e.插件扩展
+			$.fn.xxx
+	2.在线api文档 http://hemin.cn/jq/
+	3.jquery模块学习
+		a.核心模块
+			$()	用来通过选择器检索dom对象(参考代码)
+			each() 用来迭代数组、对象、Jquery对象
+			index() 用来获得当前代理了一个dom元素的代理对象，dom元素所在同级别dom中的索引
+			data() 用来缓存内存中的原生dom对象的某个属性
+			extend() 用来扩展第一个对象的功能
+		b.选择器
+			$(selector) 所有css(css3)的语法实现
+			* css(css3)不认识的(通常都是伪类语法)
+		c.属性
+			attr() 就是用来操作标签的属性
+			标签属性、自定义标签属性...
+			prop() 就是用来操作标签的状态,
+			比如checked、selected、disabled、readonly...
+		d.样式(位置和尺寸)
+			addClass() 给目标对象添加类样式 优先级高
+			* 用jquery操作dom样式的时候，尽量使用addClass，便于维护，显示和代码分离
+			css()	给目标对象添加行内样式
+			* 当css样式属性的值是变量或者是动态计算的，我们只能用css
+			width()
+			height()
+			offset() 包含了top和left位置的对象，jquery动态帮你计算好了的当前目标dom在浏览器页面中的位置
+			position() 指的是它相对于参照dom的位置
+		e.文档处理
+			无论你想如何操作文档，jquery都有对应的方法
+			wrap()	
+			clone()
+		f.效果
+			建议大家多使用css3
+		g.ajax
+			$.ajax() 通用的ajax处理方法，能够处理一切服务器异步操作
+			$.get()	参数随着url带过去
+			$.post() 参数隐士的方式带过去
+			$.getJSON() 明白ajax返回的数据一定是json格式的
+			$.load() 明白ajax返回的数据一定是html格式的，而且是要加载在当前dom里面的
+			* 比如说自己实现一个window

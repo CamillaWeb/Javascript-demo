@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+<!--<script src="../jquery.min.js"></script>-->
+<script>
+    /*console.log($.fn);
+	$.fn.abc = {
+	   abc : function(){
+		   return 123;
+	   }	
+	}*/
+	function Proxy(selector){
+		
+	}
+    function $(selector){
+		return new Proxy(selector);
+	}
+	var $body = $(document.body);
+	console.log($body);//Proxy {}
+	
+
+</script>
+</body>
+</html>

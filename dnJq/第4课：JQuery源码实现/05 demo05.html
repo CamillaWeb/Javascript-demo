@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+<div class="list"></div>
+<div class="list"></div>
+<script>
+	var $dn = dnjQuery = (function(root){
+		var _proxy = function(selector){
+			var _p = root.document.querySelectorAll(selector); //获取所有selector选择器
+			return _p;
+		}
+	    var $ = function(selector){
+	    	return _proxy(selector);
+	    }
+	    $.fn = NodeList.prototype.addClass = function(){
+	    	console.log("this is addClass");
+	    	return this;
+	    }
+	    $.fn = NodeList.prototype.removeClass = function(){
+	    	console.log("this is removeClass");
+	    	return this;
+	    }
+	    return $;
+	})(window);
+
+	var $list = $dn(".list");
+	$list.addClass().removeClass();
+</script>
+</body>
+</html>

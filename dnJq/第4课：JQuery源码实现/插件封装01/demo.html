@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+<div class="list"></div>
+<script src="../../jquery.min.js"></script>
+<script>
+	$(function(){
+	   $.fn.addList = function(data){
+		   data = data||[]; //用户没有传参数时默认空对象
+		   var $ul = $("<ul></ul>");
+		   $.each(data,function(i,o){
+			   var $li = $("<li>"+o+"</li>");
+			   $ul.append($li);
+		   });
+		   this.append($ul);
+	   }
+	   
+	   var $list = $(".list");
+	   //$list.addList(["star","john","mary"]);	
+	   $list.addList();
+	})
+</script>
+</body>
+</html>

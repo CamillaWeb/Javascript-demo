@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <div>
+        <p>this is line 1</p>
+    </div>
+    <div>
+        <p>this is line 2</p>
+    </div>    
+	<script>
+    window.document.body.children[0].children[0].innerHTML = "this is line 0";
+	
+	var newDiv = document.createElement("div");
+	newDiv.innerHTML = "this is new div";
+	newDiv.style.color = "#4499fe";
+	document.body.appendChild(newDiv);
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+<!--<script src="../jquery.min.js"></script>-->
+<script>
+   function Proxy(selector){
+	   
+   }
+   
+   function $(selector){
+	   return new Proxy(selector);
+   }
+   
+   $.fn = Proxy.prototype = {
+	   addClass : function(){
+		   console.log("this is addClass"); 
+		   return this;  
+	   },
+	   removeClass : function(){
+		   console.log("this is removeClass");
+		   return this;
+	   } 
+   }
+   
+   $.fn.show = function(){
+	   console.log("this is show");
+	   return this;
+   }
+   
+   var $body = $(document.body);
+   /*$body.addClass();
+   $body.removeClass();
+   $body.show();*/
+   $body.addClass().removeClass().show();  //通过每个插件函数return this实现链型操作
+
+</script>
+</body>
+</html>
+ 

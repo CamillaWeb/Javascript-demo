@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<script src="../jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <p>this is line 1</p>
+    </div>
+    <div class="box">
+        <p>this is line 2</p>
+    </div>    
+	<script>
+	  
+	  //JavaScript实现
+	  /*function $(tranget){
+		  var trangets = document.querySelectorAll(tranget);
+		  trangets.text = function(text){
+			  for(var i=0;i<this.length;i++){
+				  trangets[i].innerText = text;
+			  }
+		  }
+		  return trangets;
+	  }*/
+	  
+      var $tranget = $("div.box p");
+	  $tranget.text("change text");
+	  $tranget[0].innerText = "hello";
+	  $tranget[0].style.color = "#f98700";
+	</script>
+</body>
+</html>

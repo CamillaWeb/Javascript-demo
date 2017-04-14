@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+<div class="list"></div>
+<script src="../jquery.min.js"></script>
+<script>
+	$.fn.addList = function(data){
+		var $ul = $("<ul></ul>");
+		for(var i=0;i<data.length;i++){
+			var $li = $("<li>"+data[i]+"</li>");
+			$ul.append($li);
+		}
+		this.append($ul);
+	}
+	//console.log($.fn);
+	var $list = $(".list"); 
+	$list.addList(["star","mary","john"]);
+</script>
+</body>
+</html>
