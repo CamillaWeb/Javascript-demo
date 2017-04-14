@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+       //判断密码强弱，包含字母，数字，特殊字符
+	   var psw = "st4#45";
+	   var strong = 0;
+	   if(psw里包含字母){
+		   strong++;
+	   }
+	   if(psw里包含数字){
+		   strong++;
+	   }
+	   if(psw里包含特殊字符){
+		   strong++;
+	   }
+	   
+	   if(strong === 0){
+		   alert("输入有误");
+	   }else{
+		   if(strong === 3){
+			   alert("强");
+		   }else if(strong === 2){
+			   alert("中");   
+		   }else{
+			   alert("弱");      
+		   } 
+	   }
+	</script>
+</body>
+</html>

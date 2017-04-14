@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <!--使用firefox浏览器使用ajax异步读取本地的数据文件把文件里的文本内容write到文档中。
+        使用firefox浏览器使用ajax异步读取本地的数据文件把文件里面的HTML片段内容append到指定的一个div元素中。-->
+    <input type="button" value="更新数据Txt" onClick="updateTxt()"/>
+    <input type="button" value="更新数据HTML" onClick="updateHtml()"/>
+    <br/><br/>
+    <div id="txt"></div>
+    <div id="box"></div>
+	<script>
+	function ajaxSend(url,callback){
+	   var xmlHttp;
+	   if(window.ActiveXObject){
+		   xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+	   }else if(window.XMLHttpRequest){
+		   xmlHttp = new XMLHttpRequest;
+	   }
+	   xmlHttp.open("get",url);
+	   xmlHttp.send(null);
+	   xmlHttp.onreadystatechange = function(){
+		   if(xmlHttp.readyState==4 && xmlHttp.status==200){
+			  callback(xmlHttp);   
+		   }
+	   }
+	}
+    function updateTxt(){
+      ajaxSend("data.txt",function(xmlHttp){
+		 document.getElementById("txt").innerHTML = xmlHttp.responseText;  
+	  });
+	} 
+    function updateHtml(){
+      ajaxSend("html.html",function(xmlHttp){
+		 var data = xmlHttp.responseXML.children;
+		 //console.log(data);
+		 for(var i=0;i<data.length;i++){
+			 var txt = document.createElement(data[i].nodeName);
+			 txt.innerHTML = data[i].innerHTML;
+			 document.getElementById("box").appendChild(txt);
+	     }
+	  });
+	}	
+	</script>
+</body>
+</html>

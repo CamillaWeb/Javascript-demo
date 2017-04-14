@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+       //判断101-200之间有多少个素数，并输出所有素数。 
+       //提示：除了1和它本身以外的中间数，全都不是它的倍数，就是素数
+       //如：3，除了1和3以外中间的数只有2，2不能被3整除，所以3是素数。再比如4，除了1和4以外的中间数有2和3，但是2能够被4整除，所以4不是素数。
+
+	   var num= 101;
+	   while(num<=200){
+		   var count = 2;
+		   var flag = true;
+		   while(count<num){
+			   if(num%count == 0){
+				   flag = false;
+				   break;
+			   }
+			   count++;
+		   }
+		   if(flag){
+			   console.log(num);
+		   }
+		   num++; 
+	   }
+
+	</script>
+</body>
+</html>

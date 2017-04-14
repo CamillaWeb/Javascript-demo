@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<style>
+html,body{ width:100%; height:100%; padding:0; margin:0;}
+dl,dt,dd,input{ margin:0; padding:0;}
+#box table{ text-align:center;}
+.tcc_box{ width:200px; height:180px; background:#fff; border:1px #ccc solid; padding:20px; position:fixed; top:50%; left:50%; margin-left:-110px; margin-top:-100px; display:none;}
+.tcc_box dl{ height:30px;}
+.tcc_box dl dt{ width:50px; float:left;}
+.tcc_box dl dd{ width:150px; float:right;}
+.tcc_box dl dd input{ width:100%; line-height:20px;}
+.tcc_box .btn input{ width:50px; height:25px; border-radius:3px; margin-left:30px; background:#FF8000; border:none; color:#fff;}
+.tcc_box .btn input:hover{ opacity:.8;}
+</style>
+</head>
+
+<body>
+    <!--使用firefox浏览器使用ajax异步读取本地的数据文件把文件里面的JSON格式字符串文本内容解析（使用eval让字符串变成数组对象）。
+        通过for循环生成ROW追加到TABLE标签中。
+        每行数据应该有“学号”、“姓名”、“年龄”、“性别”、“成绩”这几个列，因此json数据格式中每个对象要包含这些属性，最后一列是“删除”、“添加”、“修改”，并且实现这些功能。-->
+    <div id="box">
+    <table width="600" border="0" id="infor">
+      <thead>
+          <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>成绩</th>
+            <th>操作</th>
+          </tr>
+      </thead>
+      <tbody id="stuList"></tbody>
+    </table>
+    </div>
+    <div class="tcc_box" id="tccBox">
+       <form action="/" method="get">
+       <dl><dt>学号：</dt><dd><input id="id" type="text"/></dd></dl>
+       <dl><dt>姓名：</dt><dd><input id="userName" type="text"/></dd></dl>
+       <dl><dt>年龄：</dt><dd><input id="age" type="text"/></dd></dl>
+       <dl><dt>性别：</dt><dd><select id="sex"><option>男</option><option>女</option></select></dd></dl>
+       <dl><dt>成绩：</dt><dd><input id="score" type="text"/></dd></dl>
+       <div class="btn"><input id="sureBtn" type="button" value="确定"/><input id="cancel" type="button" value="取消"/></div>
+       </form>
+    </div>
+	<script>
+	var stuList,tccBox,cancel,sureBtn;
+	window.onload = function(){
+		stuList = document.getElementById("stuList");
+		tccBox = document.getElementById("tccBox");
+		cancel = document.getElementById("cancel");
+		sureBtn = document.getElementById("sureBtn");
+		ajaxLoad();//页面加载时加载数据
+		cancel.onclick = function(){
+			tccHide();
+		}
+	}
+	//显示
+	function tccShow(){
+		tccBox.style.display = "block";
+	}
+	
+	//隐藏
+	function tccHide(){
+		tccBox.style.display = "none";
+	}	
+	
+	function ajaxSend(url,callback){
+		var xmlHttp;
+		if(window.ActiveXObject){
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}else if(window.XMLHttpRequest){
+			xmlHttp = new XMLHttpRequest;
+		}
+		xmlHttp.open("get",url);
+		xmlHttp.send(null);
+		xmlHttp.onreadystatechange = function(){
+		    if(xmlHttp.readyState==4 && xmlHttp.status==200){
+			    callback(xmlHttp);
+			}	
+		}
+	}
+	
+	//获取数据
+	function ajaxLoad(){
+		ajaxSend("data.txt",function(xmlHttp){
+		    var json = JSON.parse(xmlHttp.responseText);
+			for(var i=0;i<json.length;i++){
+                addRow(json[i]);
+			}	
+		});
+	}
+	
+	//增加行
+    function addRow(json){
+		var oTr = document.createElement("tr");
+		oTr.innerHTML = "<td>"+json.id+"</td><td>"
+							  +json.name+"</td><td>"
+							  +json.age+"</td><td>"
+							  +json.sex+"</td><td>"
+							  +json.score+"</td><td><input onclick='add()' type='button' value='添加'><input onclick='del(this)' type='button' value='删除'><input onclick='modify(this)' type='button' value='修改'></td><td>"
+	   stuList.appendChild(oTr); 
+	}
+	
+	//添加
+	var id = document.getElementById("id");
+	var userName = document.getElementById("userName");
+	var age= document.getElementById("age");
+	var sex = document.getElementById("sex");
+	var score = document.getElementById("score");
+	function add(){
+		tccShow();
+		id.readOnly = false;
+		id.value = "";
+		userName.value = "";
+		age.value = "";
+		sex.value = "";
+		score.value = "";
+		sureBtn.onclick = function(){
+		   var data = {};
+		   data.id = id.value; 
+		   data.name = userName.value; 
+		   data.age = age.value; 
+		   data.sex = sex.value; 
+		   data.score = score.value; 
+		   addRow(data);
+		   tccHide(); 
+		}
+	}	
+	
+	//删除
+	function del(btn){
+		btn.parentNode.parentNode.remove();
+	}
+	
+	//修改
+	function modify(btn){
+		var oParent =  btn.parentNode.parentNode;
+		var tds = oParent.children;
+		tccShow();
+		id.readOnly = true;
+        id.value = tds[0].innerHTML;
+		userName.value = tds[1].innerHTML;
+		age.value = tds[2].innerHTML;
+		sex.value = tds[3].innerHTML;
+		score.value = tds[4].innerHTML;
+		sureBtn.onclick = function(){
+			tds[0].innerHTML = id.value;
+			tds[1].innerHTML = userName.value;
+			tds[2].innerHTML = age.value;
+			tds[3].innerHTML = sex.value;
+			tds[4].innerHTML = score.value;
+			tccHide(); 
+		}
+	}
+	</script>
+</body>
+</html>

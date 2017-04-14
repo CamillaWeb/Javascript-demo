@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //创建一个日期，为自己的出生日期，并且输出自己的出生日期；得到自己出生日期的毫秒数，通过这个毫秒数让自己的的出生年份增加一年并且输出。
+	   var born = new Date(1991,01,25,0,0,0);
+	   console.log(born.toLocaleString()); //把数字转换为字符串，使用本地数字格式顺序。
+	   console.log(born.getTime());//输出毫秒数
+	   var time = born.getTime();
+	   time += 1000*60*60*24*365;
+	   born.setTime(time);//重新设置时间
+	   console.log(born.toLocaleString());
+	</script>
+</body>
+</html>

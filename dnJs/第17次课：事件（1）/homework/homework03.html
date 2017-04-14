@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <!--某个文本框只能输入数字，通过事件实现文本框只能输入数字，数字以外的字符无法输入。-->
+	<form>
+		<input type="text"/>
+	</form>
+	<script>
+	  window.onload = function(){
+          var myInput = document.getElementsByTagName("input")[0];
+		  myInput.onkeydown = function(e){
+			  //console.log(e);
+			  return /^\d$/.test(e.key);
+	      }
+		  myInput.oncontextmenu = function(){
+			 return false; 
+		  }
+	  }
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

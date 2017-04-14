@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <a href="#">刷新页面</a>
+    <input onClick="history.back()" type="button" value="后退"/>
+    <input onClick="history.forward()" type="button" value="前进"/>
+    <input onClick="history.go(-1)" type="button" value="go"/>
+    <input onClick="location.href='http://www.baidu.com'" type="button" value="去百度"/>
+    <script>
+        console.log(location.protocol);//协议
+		console.log(location.host);//域名
+		console.log(location.port);//端口
+		console.log(location.pathname);//路径
+    </script>
+</body>
+</html>

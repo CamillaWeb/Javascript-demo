@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS</title>
+</head>
+<body>
+	<script>
+		var htmlCode = '<ul class="FNewMTopLis"><li><a href="http://news.ifeng.com/a/20161028/50170786_0.shtml" target="_blank">吴玉良、齐玉、黄坤明出席并答记者问</a></li><li><a href="http://news.ifeng.com/a/20161027/50165555_0.shtml" target="_blank">中共十八届六中全会公报(全文)</a> <a href="http://news.ifeng.com/a/20161028/50169423_0.shtml" target="_blank">16句话读懂公报</a></li><li><a href="http://news.ifeng.com/a/20161028/50170424_0.shtml" target="_blank">十八届六中全会公报看点有哪些？全部干货在这里</a></li><li><a href="http://news.ifeng.com/a/20161028/50169915_0.shtml" target="_blank">横空出世！歼-20将首次亮相珠海航展(图)</a></li><li><a href="http://news.ifeng.com/a/20161028/50169610_0.shtml" target="_blank">庞然大物！中国最大火箭长征五号上发射架(组图)</a></li><li><a href="http://news.ifeng.com/a/20161027/50166110_0.shtml" target="_blank">透视前三季度经济增长的积极因素：新动能从何而来？</a></li><li><a href="http://news.ifeng.com/a/20161028/50166525_0.shtml" target="_blank">27省前三季度GDP增速出炉：垫底的不是东三省了</a></li><li><a href="http://news.ifeng.com/a/20161028/50170049_0.shtml" target="_blank">国民党副主席胡志强：“九二共识”重点是一中</a></li><li><a href="http://news.ifeng.com/a/20161028/50169982_0.shtml" target="_blank">台遭绑架船员之妻：丈夫是民进党员 但感恩蓝营</a></li><li><a href="http://news.ifeng.com/a/20161028/50170499_0.shtml" target="_blank">特朗普：应该取消大选，直接宣布我是总统</a> <a href="http://news.ifeng.com/a/20161028/50169030_0.shtml" target="_blank">大选漫画</a></li><li><a href="http://news.ifeng.com/listpage/jhy/70/xwjhylist.shtml" target="_blank">“闺蜜干政”持续发酵：议员要求朴槿惠退党</a></li><li><a href="http://fo.ifeng.com/a/20161028/44479897_0.shtml" target="_blank">怎么从地狱里逃出来？三大高僧幽冥世界全揭秘</a></li><li><a href="http://news.ifeng.com/a/20161028/50169694_0.shtml" target="_blank">儿女都患尿毒症 母亲：我有2个肾，你们1人1个吧(图)</a></li><li><a href="http://news.ifeng.com/a/20161028/50170473_0.shtml" target="_blank">云南一官员辞职信：常为清除“官气”而烦恼(全文)</a></li><li><a href="http://news.ifeng.com/a/20161028/50169660_0.shtml" target="_blank">杭州：女子机场强行过关受阻 一巴掌打聋安检员(图)</a></li><li><a href="http://news.ifeng.com/a/20161028/50169832_0.shtml" target="_blank">江苏一女大学生裸身坠亡 生前反复留言：求放过我(图)</a></li><li><a href="http://news.ifeng.com/listpage/70374/1/list.shtml" target="_blank">暖新闻</a>丨<a href="http://news.ifeng.com/a/20161028/50170190_0.shtml" target="_blank">医生婚礼前夜通宵做手术：救人最重要(图)</a></li><li><a href="http://tech.ifeng.com/a/20161028/44479896_0.shtml" target="_blank">陈彤出任一点资讯总裁：致力打造现象级内容平台</a></li></ul>';
+		//<li><a href="http://news.ifeng.com/a/20161028/50170786_0.shtml" target="_blank">吴玉良、齐玉、黄坤明出席并答记者问</a></li><li>]
+		var regex = /<li><a href="([^"]+)" target="_blank">([^<]+)<\/a><\/li>/;
+		console.log(regex.test(htmlCode));
+		var arr = [];
+		while(regex.exec(htmlCode)){
+			htmlCode = htmlCode.replace(RegExp.$1,"");
+			arr.push({href:RegExp.$1,api:RegExp.$2});
+	    }
+        console.log(arr);
+	</script>
+</body>
+</html>

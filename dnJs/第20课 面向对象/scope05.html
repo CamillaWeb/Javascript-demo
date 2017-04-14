@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+<body>
+<script>
+    var a = 12;
+	var b = "12";
+	function c(){
+		
+	}
+	var c = function(){
+		d = 15;
+		a = 20;
+		function e(){
+			d = 33;
+		}
+		var d;
+		e();
+		console.log(d);
+	}
+	c();//33
+	console.log(a);//20
+	console.log(b);//"12"
+</script>
+</body>
+</html>

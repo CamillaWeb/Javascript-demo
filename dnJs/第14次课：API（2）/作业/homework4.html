@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //定义一个函数名叫isPassword，传入用户输入的字符串，判断字符串是否一个合理的密码，密码的规则是由字母数字下划线所组成，必须包含数字、字母和下划线,6-20位
+       function isPassword(psw){
+		   if(!/^\w{6,20}$/.test(psw)){
+               return false;
+		   }
+		   
+		   var count = 0;
+		   if(/\d/.test(psw)){
+			  count++; 
+		   }
+		   if(/[a-zA-Z]/.test(psw)){
+			  count++; 
+		   }
+		   if(/_/.test(psw)){
+			  count++; 
+		   }	
+		   return count === 3;	   		  
+	   }
+	   console.log(isPassword("hello444_eee"));
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

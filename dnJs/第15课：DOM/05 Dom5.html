@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <div>
+        <h3>标题标题</h3>
+        <p>文本文本文本文本文本文本文本文本</p>
+        <span>这是内span标签</span><br/>
+        <span class="txt">这是内span标签</span><br/>
+        <span>这是内span标签</span>
+    </div>
+    <span>这是外span标签</span><br/>
+    <span class="txt">这是外span标签</span><br/>
+    <span class="txt">这是外span标签</span><br/>
+    <span>这是外span标签</span><br/>
+    <span>这是外span标签</span>
+	<script>
+       var oTxt = document.getElementsByClassName("txt");//getElementsByClassName()是ES6特性
+	   for(var i=0;i<oTxt.length;i++){
+		   oTxt[i].innerHTML = "我改变了内容";
+		   oTxt[i].style.color = "red";
+	   }
+	</script>
+</body>
+</html>

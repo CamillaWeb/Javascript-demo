@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	    /*今天带女朋友去吃什么？通过用户输入的money数值（单位元），如果小于等于5，输出 女朋友很不开心，说吃你妹；如果大于5小于10 女朋友有点生气，说那随便吃碗面吧；如果在10和20之间 女朋友说那你带我去吃个盖码饭；如果在20和50之间 女朋友心情很好，说我想吃干锅麻辣；如果50和100之间 女朋友高兴的说去下馆子吧；如果100以上女朋友雀跃的说想吃日本料理；如果大于100000 女朋友说嫁给你。。。
+基于上述逻辑，定义一个名叫toEat的函数，通过传入的参数money，输出一个对象，对象里面有两个描述信息，一个是食物（food），另外一个就是情绪（mood）。*/
+
+	    /*var money = prompt("屌丝，你身上有多少钱？","请输入金额");
+		if(money <= 5){
+			alert("女朋友很不开心，说吃你妹");
+		}else if(money <= 10){
+			alert("女朋友有点生气，说那随便吃碗面吧");
+		}else if(money <= 20){
+			alert("女朋友说那你带我去吃个盖码饭");
+		}else if(money <= 50){
+			alert("女朋友心情很好，说我想吃干锅麻辣");
+		}else if(money <= 100){
+			alert("女朋友高兴的说去下馆子吧");
+		}else if(money <= 100000){
+			alert("女朋友雀跃的说想吃日本料理");
+		}else{
+			alert("女朋友说嫁给你");
+		}*/
+		function toEat(money){
+			var girlFriend = {
+				food : food,
+				mood : mood
+			}
+						
+			var food,mood;
+			if(money <= 5){
+				food = "吃你妹";
+				mood = "很不开心";
+			}else if(money < 10){
+				food = "吃碗面";
+				mood = "有点生气";
+			}else if(money < 20){
+				food = "吃盖码饭";
+				mood = "一般";
+			}else if(money < 50){
+				food = "吃干锅麻辣";
+				mood = "心情很好";
+			}else if(money < 100){
+				food = "下馆子";
+				mood = "高兴";
+			}else if(money < 100000){
+				food = "吃日本料理";
+				mood = "雀跃";
+			}else{
+				food = "嫁给你";
+				mood = "雀跃";
+			}
+				
+			return girlFriend;		
+		}
+		
+		var girlFriend = toEat(37);
+		alert('女朋友'+girlFriend.mood+'的说'+girlFriend.food);
+
+	</script>
+</body>
+</html>

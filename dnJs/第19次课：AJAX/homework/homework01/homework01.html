@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <!--写出具有兼容性的XMLHttpRequest异步ajax的操作流程，并请求本地的一个文本文件输出里面的内容到控制台。-->
+    <input type="button" value="更新数据" onClick="update()"/>
+    <br/><br/>
+    <div id="box">这是原始数据</div>
+	<script>
+	function update(){
+		var xmlHttp;
+		if(window.ActiveXObject){
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}else if(window.XMLHttpRequest){
+			xmlHttp = new XMLHttpRequest;
+		}
+		xmlHttp.open("get","data.txt");
+		xmlHttp.send(null);
+		xmlHttp.onreadystatechange = function(){
+		    if(xmlHttp.readyState==4 && xmlHttp.status==200){
+				document.getElementById("box").innerHTML = xmlHttp.responseText;
+			}	
+		}
+	}
+	</script>
+</body>
+</html>

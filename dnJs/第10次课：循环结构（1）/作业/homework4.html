@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+       //你老娘安排你和一个妹纸相亲。妹纸说她对长相不是很重视，关键是要爱我，如何爱我呢？体现在你工资多高，如果工资低于15000，你就滚，否则就问下一个问题-你的存款有多少，如果低于100000，你就滚，否则就再问下一个问题-你有房吗，如果没有，你就滚，否则就再问下一个问题-你有车吗，如果没有，你就滚，否则就今天生米煮成熟饭，嘿嘿。
+    var salary = parseInt(prompt("你的工资多高？"));
+    if(salary<15000){
+        console.log("滚");
+    }else{
+        var money = parseInt(prompt("下一个问题，你的存款有多少？"));
+        if(isNaN(money)){
+            console.log("你个逗逼");
+        }else if(money<100000){
+            console.log("滚");
+        }else{
+            var hasHouse = prompt("下一个问题，你有房子吗？");
+            if(hasHouse === '有'){
+                var hasCar =  prompt("下一个问题，你有车吗？");
+                if (hasCar === '有'){
+                    console.log("今天生米煮成熟饭，嘿嘿。");
+                }else{
+                    console.log("滚");
+                }
+            }else{
+                console.log("滚");
+            }
+        }
+    }
+    
+    console.log("滚");
+    </script>
+</body>
+</html>

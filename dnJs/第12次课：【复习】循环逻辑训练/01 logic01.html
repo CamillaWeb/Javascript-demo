@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //水仙花数
+	   //水仙花数是指一个 n 位数 ( n≥3 )，它的每个位上的数字的 n 次幂之和等于它本身
+	   //假设是个三位数
+	   for(var i=100;i<1000;i++){
+		   var g = i%10;  //取个位数字
+		   var s = parseInt(i/10)%10;   //取十位数字 parseInt()、Math.floor()取整
+		   var b = Math.floor(i/100);   //取百位数字
+		   if(g*g*g+s*s*s+b*b*b == i){
+			   console.log(i);  
+		   }
+	   }
+	   	   
+	</script>
+</body>
+</html>

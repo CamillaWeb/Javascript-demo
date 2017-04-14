@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //定义一个函数名叫isEmail，传入用户输入的字符串，判断字符串是否一个合理的邮箱地址，邮箱地址的规则你懂的  提示：结尾可以是com、com.cn、net等
+       function isEmail(email){
+           var regex = /^\w+@\w+\.(com|com\.cn|net)$/;
+		   return regex.test(email);
+	   }
+	   console.log(isEmail("star@qq.net"));//true
+	   console.log(isEmail("star@qq.com"));//true
+	   console.log(isEmail("star@qq.com.cn"));//true
+       console.log(isEmail("starqq@.com.cn"));//false
+	</script>
+</body>
+</html>

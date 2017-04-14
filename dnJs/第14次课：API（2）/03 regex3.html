@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //验证手机号码11位
+	   //{}: {s,e}当{}里有一位数时，代表出现的次数；若果有两位数时，代表s-e位
+	   var regex = /^1[0-9]{10}$/; 
+	   var target = "15925468888";
+	   console.log(regex.test(target));
+	   
+	   var reg = /^1[0-9]{2,3}$/;
+	   var tar = "1344";
+	   var tar1 = "134";
+	   var tar2 = "13rt";
+	   console.log(reg.test(tar));//true
+	   console.log(reg.test(tar1));//true
+	   console.log(reg.test(tar2));//false
+	</script>
+</body>
+</html>

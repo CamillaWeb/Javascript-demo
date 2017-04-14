@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <!--基于正则表达式，实现文本框点击的时候把文本框内容清空，当移开之后判断用户输入的是否为一个合理的手机号码。-->
+    <input type="text" value="请输入"/>
+	<script>
+	   window.onload = function(){
+		   var oInput = document.getElementsByTagName("input")[0];
+		   oInput.onfocus = function(){
+			   oInput.value = "";   
+		   }
+		   oInput.onblur = function(){
+			   var regex = /^[1]\d{10}$/;
+			   if(regex.test(oInput.value)){
+				   alert("输入正确！");
+			   }else{
+				   alert("输入错误,请重新输入(11位)！");  
+				   oInput.value = ""; 
+			   } 
+		   }
+	   }
+	</script>
+</body>
+</html>

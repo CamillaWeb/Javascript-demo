@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <!--使用firefox浏览器使用ajax异步读取本地的数据文件把文件里面的JSON格式字符串文本内容解析（使用eval让字符串变成数组对象）。
+        通过for循环生成列表项追加到UL标签中（数据格式自定义）-->
+    <input type="button" value="更新数据"/>
+    <br/><br/>
+    <ul id="box"></ul>
+	<script>
+	function ajaxSend(url,callback){
+		var xmlHttp;
+		if(window.ActiveXObject){
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}else if(window.XMLHttpRequest){
+			xmlHttp = new XMLHttpRequest;
+		}
+		xmlHttp.open("get",url);
+		xmlHttp.send(null);
+		xmlHttp.onreadystatechange = function(){
+		    if(xmlHttp.readyState==4 && xmlHttp.status==200){
+				callback(xmlHttp);
+			}	
+		}	
+	}
+	function update(){
+       ajaxSend("data.txt",function(xmlHttp){
+		  //var json = JSON.parse(xmlHttp.responseText);
+		  var json = eval('(' + xmlHttp.responseText + ')'); 
+		  for(var i=0;i<json.length;i++){
+			 var oBox = document.getElementById("box");
+			 var oLi = document.createElement("li");
+			 oLi.innerHTML = json[i].name+","+json[i].age;
+			 oBox.appendChild(oLi);
+		  }
+	   });
+	}
+	update();
+	</script>
+</body>
+</html>

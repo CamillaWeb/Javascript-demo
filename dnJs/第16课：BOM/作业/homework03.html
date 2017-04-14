@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <!--定义一个按钮，文本为“追加”，设置按钮的onClick属性，值为appendItem()，代表的是当点击按钮时调用的函数为appendItem，定义appendItem函数，实现每次点击先通过prompt问用户的爱好，后往文档中id为myList的ul中添加一个li元素，文本内容为用户输入的爱好。-->
+    <ul id="myList"></ul>
+    <input type="button" value="追加" onClick="appendItem()">
+	<script>
+       function appendItem(){
+		  var myList = document.getElementById("myList");
+		  var fav = prompt("你的爱好是什么");
+		  var li = document.createElement("li");
+		  li.innerHTML = fav;
+		  myList.appendChild(li); 
+	   }
+	</script>
+</body>
+</html>

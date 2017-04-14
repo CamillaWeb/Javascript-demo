@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   var regex = /^\w+@\w+\.com(\.cn)?$/; //+:相当于{1,}，1到多个; ?:代表0或者1个（可有可无）
+	   var target = "star@qq.com";
+	   console.log(regex.test(target));//ture
+	   //补充：*：相当于{0,}，0到多个
+	</script>
+</body>
+</html>

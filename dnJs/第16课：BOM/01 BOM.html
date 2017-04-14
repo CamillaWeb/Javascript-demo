@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <div id="boom">将在5秒钟爆炸！</div>
+	<script>
+       var oBoom = document.getElementById("boom");
+	   /*setTimeout(function(){
+          oBoom.innerHTML = "boom!"; 
+	   },5000);*/
+	   var i = 5;
+	   var time = setInterval(function(){
+		   i--;
+		   if(i==0){
+			   oBoom.innerHTML = "boom!";
+			   clearInterval(time);
+		   }else{
+			   oBoom.innerHTML = "将在"+i+"秒钟爆炸！";
+		   }
+	   },1000);
+	</script>
+</body>
+</html>

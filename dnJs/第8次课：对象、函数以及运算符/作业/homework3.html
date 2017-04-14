@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+		//写一个功能函数，传入一个年月日的数字（如19910510），判断是否你的生日，返回boolean类型的值
+		function isBirthday(birDate){
+		    return birDate == 19910311;	
+		}
+		
+		//写五个功能函数，分别用来计算两个数值的和、差、积、商和余
+		function sum(num1,num2){
+			return num1+num2;
+		}
+		
+		function minus(num1,num2){
+			return num1-num2;
+		}
+		
+		function multiply(num1,num2){
+			return num1*num2;
+		}
+		
+		function divide(num1,num2){
+			return num1/num2;
+		}
+		
+		function remainder(num1,num2){
+			return num1%num2;
+		}
+		
+	    alert(isBirthday(19950510));
+		
+		var num1 = 20,num2 = 10;
+		alert(sum(num1,num2));
+		alert(minus(num1,num2));
+		alert(multiply(num1,num2));
+		alert(divide(num1,num2));
+		alert(remainder(num1,num2));
+	</script>
+</body>
+</html>

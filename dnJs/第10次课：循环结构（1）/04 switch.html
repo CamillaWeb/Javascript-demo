@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+       //输入0-3的数字，0代表上，1代表下，2代表左，3代表右
+	   var dir = Number(prompt("请选择方向","请输入0-3的数"));  //dir为string类型,转换为number类型 
+	   //alert(typeof dir); //string
+	   switch(dir){
+		   case 0 :          
+		      alert('上');
+			  break;
+		   case 1 : 
+		      alert('下');
+			  break;
+		   case 2 : 
+		      alert('左');
+			  break;
+		   case 3 : 
+		      alert('右');
+			  break;
+		   default :
+		      alert('输入错误');			  			  
+	   }
+	   alert("程序完成");
+	</script>
+</body>
+</html>

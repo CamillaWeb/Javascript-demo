@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <ul id="oUl">
+      <li>苹果</li>
+      <li>香蕉</li>
+      <li>梨子</li>
+    </ul>
+    <ul id="oTea">
+      <li>咖啡</li>
+      <li>奶茶</li>
+      <li>牛奶</li>
+    </ul>    
+    <input type="button" value="按钮" onClick="appendEle()">
+
+<script>
+   function appendEle(){
+	   var oFruit = document.getElementById("oUl");
+	   var oEle = oFruit.lastChild;
+	   document.getElementById("oTea").appendChild(oEle);
+   }
+</script>
+</body>
+</html>

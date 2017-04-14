@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //统计字符串在母字符串中出现的次数
+	   var parent = "hello world hello star";
+	   var child = /hello/g;   //g执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。
+	   var count = 0;
+	   while(child.exec(parent)){
+		   count++;
+	   }
+	   console.log(count);
+	</script>
+</body>
+</html>

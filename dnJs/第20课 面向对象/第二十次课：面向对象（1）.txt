@@ -1,0 +1,54 @@
+回顾：
+	AJAX浏览器兼容写法
+		异步的javascript和XML
+		通过异步访问服务器的方式，从服务器返回少量的数据或代码，实现页面的局部刷新
+		if(window.ActiveXObject){
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}else if(window.XMLHttpRequest){
+			xmlHttp = new XMLHttpRequest();
+		}
+		xmlHttp.open('get','/deleteStudetn.do');
+		xmlHttp.send("stu_id="+id);
+		xmlHttp.onreadystatechange = function(){}
+	状态码
+		readyState===4&&status===200
+	NodeJS服务器搭建
+		JSONP跨域解决原理
+		通过<script>脚本标签实现跨域加载脚本，与服务器协议好接口
+作业点评：
+	作业解答
+学习要求：
+	完成作业和到课者加学分（学分制规则在VIP群共享中）
+知识点：
+	全新的作用域和闭包的概念
+	作用域
+		封装=>函数
+		面向对象：在传统的面向对的程序设计中，对于对象的属性和函数是通过访问修饰符来确定作用域（private[私有]、public[共有]、protected[受保护的]）
+		var person = {name:"star",sex:0,_money:100000,age:30};
+		person.name;//star
+		//person._money;//error
+	作用域的范围
+		结论：通过对象和函数可以指定变量或属性作用域的范围
+	闭包
+		闭包内存图
+		*函数调用本质其实是创建一个临时的闭包空间
+		*闭包寻找变量的时候，作用域是就近原则
+	JS执行过程
+		1.先提升（先提升函数，再提升变量，如果名字一样，变量提升会覆盖函数提升）
+		2.再执行，如果遇到闭包创建
+		3.在闭包空间中反复1和2
+		先定义（提升），在执行
+		变量提升
+		函数提升
+	类(class)和对象(object)
+		面向对象
+		类：就是一组对象共同的属性和行为的抽象，抽象的模板
+		对象：就是具体的内存空间中的一块空间，实实在在活生生的一个实例
+	构造器
+	this关键字
+英文单词：
+	无
+作业：
+	请参考“作业”文件夹下的文档内容，并按时完成。
+
+做一家受人尊敬的企业，做一位受人尊敬的老师。  -by 动脑学院

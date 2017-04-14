@@ -1,0 +1,37 @@
+回顾：
+	解决问题的思路
+		如果页面交互效果和你想象的不一样
+			1.通过console检查控制台是否出现了错误或异常
+				a.syntax error 语法错误
+				b.not defined 简单的逻辑错误
+			2.通过debug检查程序的逻辑错误
+			3.通过console或者alert这样的API
+		知道概念，百度查询
+	事件三要素
+		事件源、事件、事件监听程序
+	事件分类
+		鼠标
+		键盘
+		其他
+作业点评：
+	作业解答 debug
+学习要求：
+	完成作业和到课者加学分（学分制规则在VIP群共享中）
+知识点：
+	最通俗的事件理解方法，还原事件本质
+	onXXXX 事件命名的规范
+	当XXXX 
+	事件对象event
+		Event
+		MouseEvent
+		KeyboradEvent
+		WheelEvent
+	事件冒泡机制
+		cancelBubble=true来取消冒泡
+		*但是早期的IE（678）早期的Opera不支持cancelBubble，需要用event.stopPropagation();
+英文单词：
+	stop[停止]、start[开始]、propagation[传播]、event[事件]、cancel[取消]、bubble[冒泡]、listener[监听器]
+作业：
+	请参考“作业”文件夹下的文档内容，并按时完成。
+
+做一家受人尊敬的企业，做一位受人尊敬的老师。  -by 动脑学院

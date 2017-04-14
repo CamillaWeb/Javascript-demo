@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //基于最后冒泡算法，实现数组的排序
+	   function sort(arr,desc){
+		   var empty;
+		   for(var i=0;i<arr.length-1;i++){
+			   for(var j=0;j<arr.length-1;j++){
+				   if(desc){
+					   if(arr[j]>arr[j+1]){
+						   empty = arr[j];
+						   arr[j] = arr[j+1];
+						   arr[j+1] = empty;
+					   }  
+				   }else{
+					   if(arr[j]<arr[j+1]){
+						   empty = arr[j];
+						   arr[j] = arr[j+1];
+						   arr[j+1] = empty;
+					   }  
+				   }
+			   }  
+		   }
+		   console.log(arr);
+	   }
+	   var arr1 = [2,55,22,41,74,88,356];
+	   console.log(arr1);
+	   sort(arr1,true);
+	   
+	   var arr2 = [2,55,22,41,74,88,356];
+	   console.log(arr2);
+	   sort(arr2,false);
+	   
+	   
+	</script>
+</body>
+</html>

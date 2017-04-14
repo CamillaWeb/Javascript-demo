@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	    //abs()
+	    console.group("abs()方法可返回数的绝对值。");
+		console.log(Math.abs(7.25));//7.25
+		console.log(Math.abs(-7.25));//7.25
+		console.log(Math.abs(7.25-10));//2.75
+		console.groupEnd();//在debug中表示一组结束
+
+	    //ceil()
+	    console.group("ceil()方法可对一个数进行上舍入。(向上取整)");
+		console.log(Math.ceil(0.60));//1
+		console.log(Math.ceil(0.40));//1
+		console.log(Math.ceil(5));//5
+		console.log(Math.ceil(5.1));//6
+		console.log(Math.ceil(-5.1));//-5
+		console.log(Math.ceil(-5.9));//-5
+		console.groupEnd();
+
+	    //floor()
+	    console.group("floor()方法可对一个数进行下舍入。(向下取整)");
+		console.log(Math.floor(0.60));//0
+		console.log(Math.floor(0.40));//0
+		console.log(Math.floor(5));//5
+		console.log(Math.floor(5.1));//5
+		console.log(Math.floor(-5.1));//-6
+		console.log(Math.floor(-5.9));//-6
+		console.groupEnd();	
+
+	    //max()
+	    console.group("max()方法可返回两个指定的数中带有较大的值的那个数。");
+		console.log(Math.max(5,7));//7
+		console.log(Math.max(-3,5));//5
+		console.log(Math.max(7.25,7.30));//7.3
+		console.groupEnd();		
+
+	    //min()
+	    console.group("min()方法可返回指定的数字中带有最低值的数字。");
+		console.log(Math.min(5,7));//5
+		console.log(Math.min(-3,5));//-3
+		console.log(Math.min(7.25,7.30));//7.25
+		console.groupEnd();
+
+	    //random()
+	    console.group("random()方法可返回介于 0 ~ 1 之间的一个随机数。");
+		console.log(Math.random());//0.6792163283098489
+		console.groupEnd();		
+
+	    //round()
+	    console.group("round()方法可把一个数字舍入为最接近的整数。");
+		console.log(Math.round(0.60));//1
+		console.log(Math.round(0.50));//1
+		console.log(Math.round(0.49));//0
+		console.log(Math.round(-4.40));//-4
+		console.log(Math.round(-4.60));//-5
+		console.groupEnd();				
+									
+    </script>
+</body>
+</html>

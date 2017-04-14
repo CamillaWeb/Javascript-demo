@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <input type="button" value="更新text数据" onClick="updateText()"/>
+    <input type="button" value="更新xml数据" onClick="updateXml()"/>
+    <br/><br/>
+    <div id="btn">这是原始数据</div>
+	<script>
+	    function ajaxSend(url,callback){
+			var xmlHttp;
+			if(window.ActiveXObject){
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");//ie
+			}else if(window.XMLHttpRequest){
+				xmlHttp = new XMLHttpRequest();//new
+			}
+			xmlHttp.open("get",url);
+			xmlHttp.send(null);
+			xmlHttp.onreadystatechange = function(){
+			   if(xmlHttp.readyState==4 && xmlHttp.status==200){
+				   callback(xmlHttp);	  
+			   }
+			}
+		}
+        function updateText(){
+            ajaxSend("data.txt",function(xmlHttp){
+				 var json = JSON.parse(xmlHttp.responseText);
+				 var str = "";
+				 for(var i=0;i<json.length;i++){
+					 str += json[i].name+","+json[i].age+"<br/>";
+				 }
+				 document.getElementById("btn").innerHTML = str;
+		    });
+		}
+        function updateXml(){
+            ajaxSend("data.xml",function(xmlHttp){
+				var data = xmlHttp.responseXML.firstChild.children;
+				var str = "";
+				for(var i=0;i<data.length;i++){
+					//console.log(data[i].attributes["name"].nodeValue);
+					str += data[i].attributes["name"].nodeValue+","+data[i].attributes["age"].nodeValue+"<br/>";
+			    }
+				document.getElementById("btn").innerHTML = str;
+		    });
+		}		
+	</script>
+</body>
+</html>

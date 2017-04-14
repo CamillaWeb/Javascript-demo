@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+<body>
+<script>
+	function People(name){
+		this.name = name;
+		this.showName = function(){
+		    console.log(this.name);	
+		}
+	}
+	var pep1 = new People("star");
+	console.log(pep1.name);//star
+	pep1.showName();//star 
+
+	var pep2 = new People("zcp");
+	console.log(pep2.name);//zcp
+	pep2.showName();//zcp
+</script>
+</body>
+</html>

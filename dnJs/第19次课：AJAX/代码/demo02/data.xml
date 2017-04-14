@@ -1,0 +1,5 @@
+<persons>
+	<person name="刘备" age="55"></person>
+	<person name="关羽" age="50"></person>
+	<person name="张飞" age="48"></person>
+</persons>

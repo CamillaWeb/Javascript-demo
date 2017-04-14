@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <div>
+        <h3>标题标题</h3>
+        <p>文本文本文本文本文本文本文本文本</p>
+    </div>
+    <span></span>
+	<script>
+	   var body = document.body;
+	   console.log(body.children[0].children);//[h3, p]
+	   console.log(body.children[0].children[0]);//<h3>标题标题</h3>
+	   body.children[1].innerHTML = "我在这个标签内增加了内容";
+	   
+	</script>
+</body>
+</html>

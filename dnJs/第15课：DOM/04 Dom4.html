@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <div>
+        <h3>标题标题</h3>
+        <p id="txt">文本文本文本文本文本文本文本文本</p>
+        <span>这是内span标签</span><br/>
+        <span>这是内span标签</span><br/>
+        <span>这是内span标签</span>
+    </div>
+    <span>这是外span标签</span><br/>
+    <span>这是外span标签</span><br/>
+    <span>这是外span标签</span><br/>
+    <span>这是外span标签</span><br/>
+    <span>这是外span标签</span>
+	<script>
+	   /*var body = document.body;
+	   var ele = body.children[0].children[1];
+	   ele.parentNode.parentNode.children[1].innerHTML = "我增加了内容";*/
+	   
+	   var oTxt = document.getElementById("txt");
+	   oTxt.innerHTML = "我改变了文本";
+	   oTxt.style.color = "blue";
+	   
+	   var span = document.getElementsByTagName("span");//数组
+	   for(var i=0;i<span.length;i++){
+		   span[i].style.color = "red";
+	   }
+
+	</script>
+</body>
+</html>

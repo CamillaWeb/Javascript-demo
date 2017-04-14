@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<style>
+html,body{ width:100%; height:100%;}
+*{ margin:0; padding:0; }
+ul{ width:100px; height:200px; border:1px #ccc solid; list-style:none;float:left; margin-left:50px;}
+ul li{ height:30px; line-height:30px; border-bottom:1px #ccc solid; list-style:none; background:#fff;}
+</style>
+</head>
+
+<body>
+    <!--实现两个Ul之间Li元素的拖拽交换-->
+    <ul id="left">
+         <li>左侧1</li>
+         <li>左侧2</li>
+         <li>左侧3</li>
+         <li>左侧4</li>
+    </ul>
+    <ul id="right">
+         <li>右侧1</li>
+         <li>右侧2</li>
+         <li>右侧3</li>
+         <li>右侧4</li>
+    </ul>    
+	<script>
+	  window.onload = function(){
+         var oLeft = document.getElementById("left"); 	
+		 var oRight = document.getElementById("right");
+		 var li = document.getElementsByTagName("li");
+		 var nowLi;
+		 for(var i=0;i<li.length;i++){
+			 li[i].onmousedown = function(){
+				 nowLi = this;
+				 document.body.onmousemove = function(e){
+					 nowLi.style.position = "absolute";
+					 nowLi.style.left = e.pageX+"px";
+					 nowLi.style.top = e.pageY+"px";
+				 } 
+				 document.body.onmouseup = function(e){
+					 document.body.onmousemove = null;
+					 document.body.onmouseup = null;
+				 } 				  
+			 }   
+	     }
+	  }
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

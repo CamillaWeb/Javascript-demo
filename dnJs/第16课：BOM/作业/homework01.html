@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<style>
+*{ padding:0; margin:0; border:0}
+#box{ width:100px; height:100px; background:#ccc; position:fixed; left:0; top:0;}
+</style>
+</head>
+
+<body>
+    <!--定义一个高度和宽度都为100像素的盒子，通过javascript的dom元素操作，让这个盒子从开始的左上角移动到右上角停止（document.body.offsetWidth可以获得文档宽度）-->
+    <div id="box"></div>
+	<script>
+       var oBox = document.getElementById("box");
+	   var maxw = document.body.offsetWidth-oBox.offsetWidth;
+	   var speed = 10;
+	   var time = setInterval(function(){
+		   if(oBox.offsetLeft>maxw){
+			   clearInterval(time);
+		   }else{
+			  oBox.style.left = oBox.offsetLeft+speed+"px";  
+		   }  
+	   },20);
+	</script>
+</body>
+</html>

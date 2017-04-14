@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //创建一个人，这个人有一些特征和行为，特征有：姓名、年龄、性别、身高、体重等；行为有：吃饭、跑步、学习，除了这些功能他还可以计算加减乘除的能力等。
+    function sum(a,b){
+        return a+b;
+    }
+    function minus(a,b){
+        return a-b;
+    }
+    function mul(a,b) {
+        return a*b;
+    }
+    function quot(a,b) {
+        return a/b;
+    }
+    function  remaind(a,b) {
+        return a/b;
+    }
+
+    var person = {
+        name : 'camilla',
+        age : 26,
+        sex : 0,
+        height : 161,
+        weight : 50,
+        eat : function(){
+            return "我在吃饭";
+        },
+        run : function(){
+            return "我在跑步";
+        },
+        study : function(){
+            return "我在学习";
+        },
+        sum : sum,
+        minus : minus,
+        mul : mul,
+        quot : quot,
+        remaind : remaind
+    }
+
+    var a = 10,b=2;
+    console.log(person.name);
+    console.log(person.height);
+    console.log(person.eat());
+    console.log(person.sum(a,b));
+</script>
+</body>
+</html>

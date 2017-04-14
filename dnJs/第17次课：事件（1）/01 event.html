@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<style>
+#box{ width:150px; height:30px; line-height:30px; background-color:#abcdef; color:#fff;}
+</style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <input type="button" value="按钮" onClick="alert('hello')"/>
+	<script>
+        window.onload = function(){
+			var oBox = document.getElementById("box");
+			oBox.innerHTML = Math.random();
+			oBox.onclick = function(event){ 
+				if(event.button==0){  //表示鼠标左键
+					oBox.innerHTML = "鼠标被点击了";
+				}
+			}
+			/*oBox.onmousedown = function(){
+			   console.log("鼠标被按下");	
+		    }
+			oBox.onmouseup = function(){
+			   console.log("鼠标被抬起");	
+		    }*/	
+			oBox.onmouseover = function(){
+				oBox.style.backgroundColor = "red";
+			}
+			oBox.onmouseout = function(){
+				oBox.style.backgroundColor = "#abcdef";
+			}						
+	    }
+	</script>
+</body>
+</html>

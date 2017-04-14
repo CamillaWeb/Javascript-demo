@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+        对象它有一系列静态的属性特征和一系列动态的行为特征所组成<br/>
+		* 只要是对象的属性特征，属性名字一定是名词；只要是对象的行为特征，行为的名字一定是动词
+	<script>
+	    var car = {
+		    number : "鄂A.888888",	
+			color : "black",
+			domain : camilla,
+			price : 50,
+			brand : "audi",
+			starup : function(){
+				alert('车子开始启动了');
+			},
+			move : function(){
+			    alert("车子开始移动了");	
+			},
+			stop : function(){
+			    alert("车子停止了");	
+			},
+			open : function(){
+			     alert("车门开了");	
+			},
+			close : function(){
+			     alert("车门关了");	
+			}
+		}
+		
+		var camilla = {
+			name : "camilla",
+			age : 25,
+			car : car,
+			height : 161,
+			weight : 50,
+			walk : function(){
+			     alert("正在走路");	
+			},
+			run : function(){
+			     alert("正在奔跑");	
+			}
+		}
+		alert(camilla.car.number);
+		
+	</script>
+</body>
+</html>

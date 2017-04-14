@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--今天带女朋友去吃什么？通过用户输入的money数值（单位元），如果小于等于5，输出 女朋友很不开心，说吃你妹；如果大于5小于10 女朋友有点生气，说那随便吃碗面吧；如果在10和20之间 女朋友说那你带我去吃个盖码饭；如果在20和50之间 女朋友心情很好，说我想吃干锅麻辣；如果50和100之间 女朋友高兴的说去下馆子吧；如果100以上女朋友雀跃的说想吃日本料理；如果大于100000 女朋友说嫁给你。。。
+基于上述逻辑，定义一个名叫toEat的函数，通过传入的参数money，输出一个对象，对象里面有两个描述信息，一个是食物（food），另外一个就是情绪（mood）。
+-->
+<script>
+  var money = prompt("请输入金额");
+  var food,mood;
+  function toEat(money){
+     return {
+         food : food,
+         mood : mood
+     }
+  }
+  if(money<=5){
+      food = '吃你妹';
+      mood = '很不开心';
+  }
+  alert(toEat());
+  var girlFriend = toEat(money);
+  console.log("女朋友"+girlFriend.mood+"说"+girlFriend.food);
+</script>
+</body>
+</html>

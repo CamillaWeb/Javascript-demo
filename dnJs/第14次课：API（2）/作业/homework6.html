@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //定义一个函数名叫isVariable，传入用户输入的字符串，判断字符串是否一个合理的变量，变量命名规范自己回顾下
+       function isVariable(variable){
+           var regex = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/;
+		   return regex.test(variable);
+	   }
+	   console.log(isVariable("gd$$_r444"));//true
+	   console.log(isVariable("134g5_$"));//false
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //Star哥哥身上有100元，用while输出能吃多少次盖码饭，最终剩下多少钱。
+	   var money = 100;
+	   var price = 12;
+	   var time = 0; 
+	   while(money>=12){
+		   money -= price;
+		   time++;   
+	  } 
+	  console.log("star可以吃"+time+"次盖码饭");
+	  console.log("还剩"+money+"块钱");
+	  
+	  //Star哥哥身上没钱了，吃了个霸王餐，用do...while实现
+	  money = 0; 
+	  do{
+		 console.log("吃了个霸王餐"); 
+	  }while(money>price);
+	</script>
+</body>
+</html>

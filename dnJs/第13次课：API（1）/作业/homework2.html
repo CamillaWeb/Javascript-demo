@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //统计子字符串在母字符串中出现的次数
+	   var str = "hello world star hello";
+	   
+	   //第一种方法
+	   //console.log(str.split("hello").length-1);
+	   
+	   //第二种方法
+	   var count = 0;
+	   while(str.indexOf("hello") != -1){
+		  count++;
+		  str = str.replace("hello","");
+	   }
+	   console.log(count);
+	   
+	</script>
+</body>
+</html>

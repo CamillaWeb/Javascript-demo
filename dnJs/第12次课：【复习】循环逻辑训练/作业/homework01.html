@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //冒泡排序算法，升序和倒序
+	   function sort(arr,sf){
+		   var empty;
+		   for(var i=0;i<arr.length-1;i++){
+			   for(var j=0;j<arr.length-1;j++){
+				   /*if(sf){
+					   if(arr[j]>arr[j+1]){
+						   empty = arr[j];
+						   arr[j] = arr[j+1];
+						   arr[j+1] = empty;
+					   }   
+				   }else{
+					   if(arr[j]<arr[j+1]){
+						   empty = arr[j];
+						   arr[j] = arr[j+1];
+						   arr[j+1] = empty;
+					   } 
+				   }*/
+				   if(sf?arr[j]>arr[j+1]:arr[j]<arr[j+1]){
+					   empty = arr[j];
+					   arr[j] = arr[j+1];
+					   arr[j+1] = empty;
+				   }   				   
+			   }
+		   }	  
+	   }
+	   
+	   
+       var arr1 = [3,45,6,77,25,11];
+	   sort(arr1,true); 
+	   console.log(arr1);
+	   
+       var arr2 = [37,435,6,77,215,11,444,62];
+	   sort(arr2,false); 
+	   console.log(arr2); 	   
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+       var dir;
+	   
+	   /*if(dir>=0 && dir<=3){
+		   console.log("输入合法");
+	   }else{
+		   console.log("输入不合法");   
+	   }*/
+	   do{
+		   dir = Number(prompt("请输入方向","0-3直接的值"));
+	   }while(!(dir>=0 && dir<=3)); //或者while(isNaN(dir) || dir<0 || dir>3);
+	   
+	   var DIRC = {
+		   0 : "上",
+		   1 : "下",
+		   2 : "左",
+		   3 : "右"
+	   }
+	   console.log("您输入的方向是"+DIRC[dir]);
+	</script>
+</body>
+</html>

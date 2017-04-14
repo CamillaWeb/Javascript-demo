@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var year = 1900;
+		if (year%100==0) {
+			if(year%400==0){
+				alert(year+'是闰年。');
+			}else{
+				alert(year+'是平年。');
+			}
+		}else if(year%4==0){
+			alert(year+'是闰年。');
+		}else{
+			alert(year+'是平年。');
+		}
+	</script>
+</body>
+</html>

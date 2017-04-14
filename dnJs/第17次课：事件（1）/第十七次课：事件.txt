@@ -1,0 +1,83 @@
+回顾：
+	DOM元素的常用属性
+		id string
+		className string
+		style object
+		innerHTML string
+		nextElementSiblings（nextSiblings）
+		previousElementSiblings（previousSiblings）
+	DOM元素的常用方法
+		setAttribute
+			img src=aaa
+			img.setAttribute('src','bbb')
+			img.src
+			img.getAttribte('src')
+		getAttribute
+		appendChild 
+			1.原本已经在dom树的dom元素
+			2.通过document.createElement（createTextNode）创建一个新的没有在dom树种的元素
+	BOM的概念
+		browser object model
+		window核心上下文对象来操作（浏览器默认的对象）
+		window.document===document
+	BOM的API
+		alert\confirm\prompt
+		除了教学、学习、调试以外基本上不用
+		不用它是因为它丑
+
+		setTimeout和setInterval
+作业点评：
+	作业解答 debug
+学习要求：
+	完成作业和到课者加学分（学分制规则在VIP群共享中）
+知识点：
+	history对象 历史对象
+		浏览器通过地址栏地址的不同，分别是否是新的地址，意味着评估之前的地址是否要进入历史
+		history.back();//前往之前一次的历史URL
+		history.forward();//前往之后一次的历史URL
+		history.go(n);//前往之前（之后）n次的历史URL
+	location对象 地址对象
+		location.protocol 协议
+		location.host 域名
+		location.port 端口号
+		location.pathname 路径
+		loaction.href 链接地址
+	navigator对象
+		经常用来判断浏览器的内核，做相应处理
+	解决问题的思路
+		如果页面交互效果和你想象的不一样
+			1.通过console检查控制台是否出现了错误或异常
+				a.syntax error 语法错误
+				b.not defined 简单的逻辑错误
+			2.通过debug检查程序的逻辑错误
+	事件的概念
+		通过事件来让用户和浏览器进行交互
+		通过事件来让程序员和程序进行交互
+	事件三要素
+		事件源、事件、事件监听程序
+	事件分类
+		鼠标类
+			onclick     鼠标点击。  mousedown mouseup
+			ondblclick  鼠标双击。
+			onmousedown	鼠标按钮被按下。
+			onmousemove	鼠标被移动。
+			onmouseout	鼠标从某元素移开。
+			onmouseover	鼠标移到某元素之上。
+			onmouseup   鼠标按键被松开。
+		键盘类
+			onkeydown	某个键盘按键被按下。
+			onkeypress	某个键盘按键被按下并松开。
+			onkeyup		某个键盘按键被松开。
+			*当前事件源是活动状态下才能执行
+		其他类
+			window.onload 当文档加载完毕之后事件
+				*所有的脚本都写到onload事件中去
+	事件对象
+	自定义事件
+		兼容问题
+英文单词：
+	click[点击]、blur[失去焦点]、focus[聚集焦点]、change[改变]、keydown[键盘点下]、mousedown[鼠标按下]、keyup[键盘松开]、mouseup[鼠标松开]、mouseover[鼠标进入（悬停）]、mouseout[鼠标出去]、keypress[键盘按下]
+作业：
+	请参考“作业”文件夹下的文档内容，并按时完成。
+
+做一家受人尊敬的企业，做一位受人尊敬的老师。  -by 动脑学院

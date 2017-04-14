@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<style>
+html,body{ width:100%; height:100%; margin:0; padding:0;}
+#box{ width:100px; border:1px #ccc solid; margin-left:100px; margin-top:100px;}
+#box ul{width:100px; margin:0; padding:0;}
+#box ul li{ height:30px; line-height:30px; color:#333; list-style:none; font-size:14px; text-align:center; border-bottom:1px #ccc solid;}
+#box ul li a{ display:block; color:#333; text-decoration:none;}
+#box ul li a:hover{ color:#999}
+#contextMenu{ width:160px; height:140px; border:1px #ccc solid; position:fixed; background:#fff; display:none;}
+#contextMenu a{ line-height:30px; text-indent:10px; color:#666; display:block; text-decoration:none;}
+</style>
+</head>
+
+<body>
+    <!--有一个UL里面有5个LI，没个LI里面都有一个超链接，分别自己定义几个文本，作为菜单。当在菜单点击右键的时候，通过DIV加CSS布局，实现一个动态的菜单（contextMenu）悬浮在右边。-->
+    <div id="box">
+        <ul>
+            <li><a href="#">菜单一</a></li>
+            <li><a href="#">菜单二</a></li>
+            <li><a href="#">菜单三</a></li>
+            <li><a href="#">菜单四</a></li>
+            <li><a href="#">菜单五</a></li>
+        </ul>
+    </div>
+    <div id="contextMenu">
+        <a href="#">在新窗口打开</a> 
+        <a href="#">链接另存为</a>
+        <a href="#">复制链接地址</a>
+        <a href="#">检查</a> 
+    </div>    
+	<script>
+	  window.onload = function(){
+		  var oBox = document.getElementById("box");
+		  var contextMenu = document.getElementById("contextMenu");
+		  oBox.onmousedown = function(event){
+			  if(event.button == 2){
+				  contextMenu.style.display = "block";  
+				  contextMenu.style.left = event.clientX+"px";  
+				  contextMenu.style.top = event.clientY+"px";  
+			  }else{
+				  contextMenu.style.display = "none"; 
+			  }  
+		  } 
+		   //阻止默认contextMenu弹出
+		   document.oncontextmenu = function(){
+			  return false;
+		   }	
+	  }
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

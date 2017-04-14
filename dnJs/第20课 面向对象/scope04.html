@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+  <script>
+      //1.先提升（先提升函数，再提升变量，如果名字一样，变量提升会覆盖函数提升）
+	  //2.再执行，如果遇到闭包创建
+	  //3.在闭包空间中反复1和2
+      test = 10;
+	  console.log(test);
+	  function test(){
+		console.log(1);  
+	  }
+	  var test;
+	  test();
+  </script>
+</body>
+</html>

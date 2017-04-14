@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   function sort(arr,desc){
+		   for(var i=0;i<arr.length-1;i++){
+			   var tempt;
+			   if(desc){
+				   for(var j=0;j<arr.length-1;j++){
+					   if(arr[j]>arr[j+1]){
+						  tempt = arr[j];
+						  arr[j] = arr[j+1];
+						  arr[j+1] = tempt;  
+					   }
+				   } 
+			   }else{
+				   for(var j=0;j<arr.length-1;j++){
+					   if(arr[j]<arr[j+1]){
+						  tempt = arr[j];
+						  arr[j] = arr[j+1];
+						  arr[j+1] = tempt;  
+					   }
+				   }    
+			   }
+		   }
+		   console.log(arr); 
+	   }
+	   var arr = [23,45,66,74,1,35];
+	   console.log(arr); 
+	   sort(arr,true);
+	   
+	   var arr1 = [23,45,66,74,1,35,44,56,68];
+	   console.log(arr1); 
+	   sort(arr1,false);
+
+
+	</script>
+</body>
+</html>

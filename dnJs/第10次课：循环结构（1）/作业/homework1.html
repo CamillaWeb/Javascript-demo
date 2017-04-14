@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+       //提示用户输入用户名，然后再提示输入密码。如果用户名是"admin"并且密码是“888888”则提示正确，否则提示密码错误,如果用户名不是admin还提示用户名不存在。
+	   var user = prompt("用户名","请输入用户名");
+	   var psw;
+	   if(user === "admin"){
+		   psw = prompt("密码","请输入密码");
+		   if(psw === "888888"){
+			  alert("正确"); 
+		   }else{
+			  alert("密码错误"); 
+		   }
+	   }else{
+		   alert("用户名不存在");  
+	   }
+	</script>
+</body>
+</html>

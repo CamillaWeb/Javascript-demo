@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //两个for循环生成菱形和空心菱形
+	   var num;
+	   do{
+		   num = Number(prompt("请输入行数"));  
+	   }while(!(num>=0 && num<15));
+	   
+	   for(var i=1,k=1;i<=num*2-1;i++){
+		   i>num?k--:k++;
+		   for(var j=1;j<num+k-1;j++){
+			   document.write(j<=num-k+1?"&nbsp;":"*"); 
+		   }
+		   document.write("<br/>"); 
+	   }
+	   document.write("<br/>");
+	   
+	   for(var i=1,k=1;i<=num*2-1;i++){
+		   i>num?k--:k++;
+		   for(var j=1;j<num+k-1;j++){
+			   document.write((j<=num-k+1 || (j>num-k+2 && j<num+k-2))?"&nbsp;":"*"); 
+		   }
+		   document.write("<br/>"); 
+	   }
+	</script>
+</body>
+</html>

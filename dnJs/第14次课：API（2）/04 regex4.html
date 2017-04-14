@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //var regex = /^1[a-zA-Z0-9_]{2,3}$/;1开头，后2-3位为大小写字母、数字、下划线
+	   var regex = /^1\w{2,3}$/;// \w === [a-zA-Z0-9_] 大小写字母、数字、下划线可简写成
+	   var target = "1a5_";
+	   var target1 = "1a5Z";
+	   console.log(regex.test(target));//ture
+	   console.log(regex.test(target1));//ture
+	</script>
+</body>
+</html>

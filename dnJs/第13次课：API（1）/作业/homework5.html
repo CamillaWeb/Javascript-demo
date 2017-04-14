@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //实现一个以空格分隔的字符串中多个英文单词变成骆驼命名法
+	   var str = "hello world star";
+	   
+	   //第一种方法
+	   /*var arr = str.split(" ");
+	   str = "";
+	   for(var i=0;i<arr.length;i++){
+		   if(i==0){
+			   str += arr[i];
+		   }else{
+			   str += arr[i].charAt(0).toUpperCase()+arr[i].substr(1);
+		   }   
+	   }
+	   console.log(str);*/
+	   
+	   //第二种方法
+	   while(str.indexOf(" ") != -1){
+		   var name = str.charAt((str.indexOf(" ")+1));
+		   str = str.replace(name,name.toUpperCase());
+		   str = str.replace(" ","");
+	   }
+	   console.log(str);
+	   
+	</script>
+</body>
+</html>

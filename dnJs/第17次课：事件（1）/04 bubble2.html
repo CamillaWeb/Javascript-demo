@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    这是body层
+    <div id="outerBox">
+        这是div层
+        <ul id="oUl">
+            <li id="oLi">
+                 这是li层
+                 <a id="oLink" href="#">这是link层</a>
+            </li>
+        </ul>
+    </div>
+	<script>
+    window.onclick  = function(){
+         alert("这是body层");
+	}
+	document.getElementById("outerBox").onclick = function(){
+		alert("这是div层");
+	}
+	document.getElementById("oUl").onclick = function(){
+		alert("这是ul层");
+	}	
+	document.getElementById("oLi").onclick = function(){
+		alert("这是li层");
+	}	
+	document.getElementById("oLink").onclick = function(event){
+		alert("这是a层");
+		if(event.stopPropagation){
+		   event.stopPropagation();
+		}else{
+		   event.cancelBubble = true;
+		}
+	}							
+	</script>
+</body>
+</html>

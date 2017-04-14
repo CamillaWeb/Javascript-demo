@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   var star = {
+		   name : "star",
+		   age : 30,
+		   height : 187,
+		   run : function(){
+			   console.log("正在奔跑");
+		   }
+	   }  
+	   //console.log(star.name);
+	   //star.run();
+	   //console.log(star["name"]);
+	   //star['run']();	  
+	   var attr = prompt("你想知道star的什么属性");
+	   console.log(star[attr]);
+
+	   var action = prompt("你想让star做什么");
+	   if(star[action] && typeof star[action] == "function"){
+		   star[action]();
+	   }else{
+		   console.log("star没有"+action+"这个功能");
+	   }
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   /*for(var i=0,j=1;i<10 && j<6;i++,j++){
+		   console.log(i+j);
+	   }*/	
+	   for(var date=31;date>=1;date--){
+		   if(date%7 == 0){
+			   console.log(date+"是周日，休息");
+			   date -= 6;    //性能优化，可以减少循环次数
+		   }
+	   }   
+	</script>
+</body>
+</html>

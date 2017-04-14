@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <input type="button" value="更新数据" onClick="update()"/>
+    <br/><br/>
+    <div id="btn">这是原始数据</div>
+	<script>
+        function update(){
+			var xmlHttp;
+			if(window.ActiveXObject){
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");//ie
+			}else if(window.XMLHttpRequest){
+				xmlHttp = new XMLHttpRequest();//new
+			}
+			xmlHttp.open("get","data.txt");//打开和服务的链接
+			xmlHttp.send(null);//send动作才是真正的给服务器上按照上面的open的URL发送请求
+			//on(当) ready(准备) state(状态) change(改变) 
+			xmlHttp.onreadystatechange = function(){
+			   if(xmlHttp.readyState==4 && xmlHttp.status == 200){
+				   var oBtn = document.getElementById("btn");
+				   oBtn.innerHTML = xmlHttp.responseText;
+			   }	
+			}
+		}
+	</script>
+</body>
+</html>

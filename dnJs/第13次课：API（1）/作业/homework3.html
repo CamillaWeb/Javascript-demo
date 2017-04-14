@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //去除字符串两边的空格
+	   var str = "  hello world star hello    ";
+	   console.log(str);
+	   while(str.charAt(0) == " "){
+		   str = str.replace(" ","");
+	   }
+	   while(str.charAt(str.length-1) == " "){
+		   str = str.substr(0,str.length-1);
+	   }
+	   console.log(str);
+	   
+	</script>
+</body>
+</html>

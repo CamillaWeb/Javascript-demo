@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <div id="myDiv" class="classOne" href="http://www.baidu.com"></div><!--id、class相当于系统属性；href相当于自定义属性-->
+    <a id="myLink" href="#"></a>
+	<script>
+       var myDiv = document.getElementById("myDiv");
+	   var myLink = document.getElementById("myLink");
+	   
+	   console.log(myDiv instanceof Object);//true  判断左边的对象是不是右边类的实例
+	   console.log(myDiv.id);//myDiv
+	   console.log(myDiv.className);//classOne
+	   console.log(myDiv.href);//undefined
+	   //自定义的属性要用getAttribute()获取
+	   console.log(myDiv.getAttribute("href"));//http://www.baidu.com
+	   
+	   myLink.setAttribute("src","https://www.baidu.com/img/bd_logo1.png");
+	   console.log(myLink.getAttribute("src"));
+	</script>
+</body>
+</html>

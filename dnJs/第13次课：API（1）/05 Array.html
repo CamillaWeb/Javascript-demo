@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	    //concat()
+	    console.group("concat()方法用于连接两个或多个数组。");
+	    var arr = [1,2,3];
+		var arr1 = [4,5,6,7];
+		var arr2 = [8,9,10];
+		console.log(arr.concat(arr1,arr2));//[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		console.log(arr.concat("hello","world"));//[1, 2, 3, "hello", "world"]
+		console.groupEnd();//在debug中表示一组结束
+		
+	    //join()
+		console.group("join()方法用于把数组中的所有元素放入一个字符串。");
+		var joinArr = ["z","h","a","n","g"];
+		console.log(joinArr.join(" ")); //空格分隔
+		console.log(typeof joinArr); //object
+		console.groupEnd();
+		
+		//pop()
+		console.group("pop()方法用于删除并返回数组的最后一个元素。");
+		var popArr = ["hello","world","star"];
+		console.log(popArr.pop());//star
+		console.log(popArr); //["hello", "world"]
+		console.groupEnd();
+
+		//shift()
+		console.group("shift()方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。");
+		var shiftArr = ["hello","world","star"];
+        console.log(shiftArr.shift());//["hello"]
+		console.groupEnd();
+		
+		//unshift()
+		console.group("unshift()方法可向数组的开头添加一个或更多元素，并返回新的长度。");
+		var unArr = ["hello","world","star"];
+		console.log(unArr.unshift("haha")); //4
+		console.log(unArr);//["haha", "hello", "world", "star"]
+		console.groupEnd();				
+		
+		//push()
+		console.group("push()方法可向数组的末尾添加一个或多个元素，并返回新的长度。");
+		var pushArr = ["hello","world"];
+		console.log(pushArr.push("star"));//3
+		console.log(pushArr);//["hello", "world", "star"]
+		console.groupEnd();
+		
+		//reverse()
+		console.group("reverse()方法用于颠倒数组中元素的顺序。");
+		var revArr = ["hello","world","star"];
+        console.log(revArr.reverse());//["star", "world", "hello"]
+		console.groupEnd();			
+		
+		//slice()
+		console.group("slice()方法可从已有的数组中返回选定的元素）");
+		console.log("包含从 start到 end（不包括该元素）的元素。如果 end 未被规定，那么 slice() 方法会选取从 start 到数组结尾的所有元素。");
+		var sliceArr = ["hello","world","star","111","222","333"];
+        console.log(sliceArr.slice(2,5));//["star", "111", "222"]
+		console.log(sliceArr.slice(-2,-1));//["222"]
+		console.log(sliceArr.slice(2));//["star", "111", "222", "333"]
+		console.log(sliceArr);//["hello", "world", "star", "111", "222", "333"]
+		console.groupEnd();
+		
+		//sort()
+		console.group("sort()方法用于对数组的元素进行排序。");
+		var revArr = ["hello","world","star"];
+        console.log(revArr.sort());//["hello", "star", "world"]
+		
+		function sortNumber(a,b){
+		   return a - b
+		}
+		var arr = new Array(6)
+		arr[0] = "10"
+		arr[1] = "5"
+		arr[2] = "40"
+		arr[3] = "25"
+		arr[4] = "1000"
+		arr[5] = "1"
+		console.log(arr.sort(sortNumber));//["1", "5", "10", "25", "40", "1000"]		
+		console.groupEnd();		
+
+		//splice()
+		//splice() 方法与 slice() 方法的作用是不同的，splice() 方法会直接对数组进行修改。
+		console.group("splice()方法向/从数组中添加/删除项目，然后返回被删除的项目。");
+		var spliceArr = ["hello","world","star","333","444"];
+		//console.log(spliceArr.splice(1,2));//["world", "star"]
+		spliceArr.splice(0,2,"zhang");
+		console.log(spliceArr);//["zhang", "star", "333", "444"]
+		console.groupEnd();		
+		
+		//toString()
+		console.group("toString()方法可把数组转换为字符串，并返回结果。");
+		var toStrArr = ["hello","world","star","333","444"];
+		console.log(toStrArr.toString()); //hello,world,star,333,444
+		console.groupEnd();										
+    </script>
+</body>
+</html>

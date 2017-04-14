@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+       //让用户输入这个月是多少天，输入的天数必须是1到31之间的数值，否则提示“输入无效，请重新输入“，然后重新输入，如果输入正确再让用户输入这个月的1号是周几，输入的数值必须是1-7之间的值，否则提示”输入无效，请重新输入“，如果输入正确则开始循环天数，并且将所有周日全都console.log(“今天周日，睡懒觉！”)。
+	   var month = Number(prompt("请输入这个月多少天","请输入1-31之间的数值"));
+	   while(!(month>=1 && month<=31)){
+		   console.log("输入无效，请重新输入");  
+		   month = Number(prompt("请输入这个月多少天","请输入1-31之间的数值"));
+	   }
+	   
+	   var week = Number(prompt("请输入输入这个月的1号是周几","请输入1-7之间的数值"));
+	   while(!(week>=1 && week<=7)){
+		   console.log("输入无效，请重新输入");  
+		   week = Number(prompt("请输入输入这个月的1号是周几","请输入1-7之间的数值"));	
+	   }
+	   
+	   for(var i=1;i<=month;i+=7){
+		   console.log(i+"号周日，睡懒觉！");
+	   }
+
+	</script>
+</body>
+</html>

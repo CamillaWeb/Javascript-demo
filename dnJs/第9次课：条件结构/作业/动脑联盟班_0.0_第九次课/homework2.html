@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function toEat (money) {
+			var food,mood;
+			if(money<=5){
+				food = '吃你妹';
+				mood = '很不开心';
+			}else if(money<10){
+				food = '吃碗面';
+				mood = '有点生气';
+			}else if(money<20){
+				food = '吃盖码饭';
+				mood = '一般';
+			}else if(money<50){
+				food = '干锅麻辣';
+				mood = '心情很好';
+			}else if(money<100){
+				food = '下馆子';
+				mood = '高兴';
+			}else if(money<100000){
+				food = '吃日本料理';
+				mood = '雀跃';
+			}else{
+				food = '嫁给你';
+				mood = '雀跃';
+			}
+
+			var girlFriend = {
+				food:food,
+				mood:mood
+			}
+			return girlFriend;
+		}
+
+		var girlFriend = toEat(120000);
+		alert('女朋友'+girlFriend.mood+'的说'+girlFriend.food);
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <!--利用NodeJS搭建服务器环境，通过动态创建script标签并且设置目标文件为服务器已经协商好的跨域js，进行跨域数据访问.-->
+    <button onclick="updateJSON()">更新JSON数据</button>
+    <ul id="box"></ul>
+	<script>
+    window.onload = function(){
+	    var myScript = document.createElement("script");
+		myScript.src = "http://localhost/demo03/jsonp.js";	
+		document.body.appendChild(myScript);
+	}
+	function updateJSON(){
+		var oBox = document.getElementById("box");
+		jsonData(function(json){
+			for(var i=0;i<json.length;i++){
+				var ele = document.createElement("li");
+				ele.innerHTML = json[i].name+","+json[i].age;
+				oBox.appendChild(ele);
+		    }
+		});
+	}
+	</script>
+</body>
+</html>

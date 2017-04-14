@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //正直角三角形
+	   var num;
+	   do{
+		  num = Number(prompt("请输入你想显示几行")); 
+	   }while(!(num>0 && num<=15));
+	   
+	   for(var i=0;i<num;i++){
+		   for(var j=0;j<=i;j++){
+			   document.write("*");
+		   }
+		   document.write("<br>");
+	   }
+	   document.write("<br>");
+	   
+	   //反直角三角形1
+	   for(var i=num;i>0;i--){
+		   for(var j=0;j<i;j++){
+			   document.write("*");
+		   }
+		   document.write("<br>");
+	   } 
+	   document.write("<br>");
+	   
+	   //逆直角三角形1
+	   for(var i=1;i<=num;i++){
+		   for(var j=1;j<=num;j++){  
+			    /*if(j<num-i){
+					document.write("&nbsp;");
+			    }else{
+			       document.write("*");
+				}*/
+				document.write((j<=num-i)?"&nbsp;":"*");
+		   }
+		   document.write("<br>");
+	   } 
+	   document.write("<br>");
+	   
+	   //逆直角三角形2
+	   for(var i=1;i<=num;i++){
+		   for(var j=1;j<=num;j++){  
+				document.write(j<i?"&nbsp;":"*");
+		   }
+		   document.write("<br>");
+	   }   
+	   document.write("<br>");
+	   
+	   //等腰三角形
+	   for(var i=1;i<=num;i++){
+		   for(var j=1;j<num+i;j++){  
+				document.write((j<=num-i)?"&nbsp;":"*");
+		   }
+		   document.write("<br>");
+	   } 
+	   document.write("<br>");
+	   
+	   //倒等腰三角形
+	   for(var i=1;i<=num;i++){
+		   for(var j=1;j<=num*2-i;j++){  
+				document.write(j<i?"&nbsp;":"*");
+		   }
+		   document.write("<br>");
+	   }
+	   document.write("<br>");
+	   
+	   //菱形
+	   for(var i=1,k=1;i<=num*2-1;i++){
+		   i>num?k--:k++;
+		   for(var j=1;j<num+k-1;j++){  
+				document.write((j<=num-k+1)?"&nbsp;":"*");
+		   }
+		   document.write("<br>");
+	   } 
+	   document.write("<br>");
+	   
+	   //空心菱形
+	   for(var i=1,k=1;i<=num*2-1;i++){
+		   i>num?k--:k++;
+		   for(var j=1;j<num+k-1;j++){  
+				document.write((j<=num-k+1 || (j>num-k+2 && j<num+k-2))?"&nbsp;":"*");
+		   }
+		   document.write("<br>");
+	   }   	     	     
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<style>
+*{ padding:0; border:0; margin:0;}
+#txt{width:200px; height:100px; padding:10px; margin:10px; border:10px #333 solid; background:#ccc; position:absolute; left:20px; top:20px;}
+</style>
+</head>
+
+<body style="height:2000px;">
+    <div id="txt"></div>
+	<script>
+	   var oTxt = document.getElementById("txt");
+       console.log("可见宽度："+oTxt.clientWidth);//220  border
+	   console.log("可见高度："+oTxt.clientHeight);//120
+	   
+	   console.log("宽："+oTxt.offsetWidth);//240  padding+border
+	   console.log("高："+oTxt.offsetHeight);//140
+	   
+	   console.log("left："+oTxt.offsetLeft);//30  padding+margin
+	   console.log("top："+oTxt.offsetTop);//30  padding+margin
+	</script>
+</body>
+</html>

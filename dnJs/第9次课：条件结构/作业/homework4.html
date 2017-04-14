@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	    /*输入三个非0的整数,如果这三个整数相等,那么输出“这三个数相等”。假如三个数的和大于1000则输出“这三个数的和大于1000”,否则输出“这三个数之和不大1000"*/
+
+		function num(n1,n2,n3){
+			if(n1===n2 && n1===n3){
+				return "这三个数相等";
+			}else if(n1+n2+n3>1000){
+				return "这三个数的和大于1000";
+			}else{
+				return "这三个数之和不大1000";
+			}
+		}
+		
+		var n1 =3888,n2=4,n3=4;
+		alert(num(n1,n2,n3));
+	</script>
+</body>
+</html>

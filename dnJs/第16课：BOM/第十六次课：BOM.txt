@@ -1,0 +1,72 @@
+回顾：
+	正则exec方法实现匹配分组内容
+		RegExp.$N 访问
+	DOM的概念
+		document object model
+		存在于内存之中
+	DOM在内存中的结构
+		内存的堆，堆中有一块专门用来管理DOM树的内存区域
+		render
+	DOM模型document对象的基础操作
+		document核心对象,文档树的上下文（context）
+			动脑科技信息有限公司-document
+			XX董事长-body(dom) element
+			XX部门的XX-dom element
+		document.getElementById(id);//identity 唯一标识
+		document.getElementsByClassName(className);
+		document.getElementsByTagName(tagName);
+作业点评：
+	作业解答 debug
+学习要求：
+	完成作业和到课者加学分（学分制规则在VIP群共享中）
+知识点：
+	标签和DOM元素的区别
+		当我们站在HTML的文档的角度来看待代码的时候，我们就把节点称之为标签
+			标签就有标签的属性和行为
+		当我们站在程序（内存）的角度来看待代码的时候，我们就会把结点称之为DOM元素
+			DOM元素也有元素的属性和行为
+		它们其实是一个东西，只是待看它的角度不一样
+		*标签只能描述dom元素的一些重要的特征，不能描述全部
+	DOM元素的基础操作
+		typeof:只能知道到底是什么原始数据类型（一般我们用来检测原始数据类型的类型）
+		instanceof:判断左边的对象是不是右边类的实例
+		* 访问对象的属性和方法之前，一定要明白被访问的对象的类型
+		内容操作
+		样式操作
+		id[string]
+		className[string]
+		style[object]
+		getAttribute[function] 获取该dom元素的标签属性
+		setAttribute[function] 设置该dom元素的标签属性和值
+	DOM元素结构操作
+		appendChild[function] 往该dom元素中追加一个子元素
+		document.createElement[function] 创建一个dom元素
+		* createElement返回的dom元素默认不在dom树中，需要通过其他dom元素的appendChild把它添加到dom树中，否则没有意义
+		document.createTextNode[function] 创建一个文本元素
+		* createTextNode返回的文本元素默认不在dom树中，需要通过其他dom元素的appendChild把它添加到dom树中，否则没有意义
+		nextElementSibling 获取当前dom元素的相邻的下一个dom元素
+		previousElementSibling 获取当前dom元素的相邻的上一个dom元素
+		*注意事项 每一个dom元素在内存中是唯一的，如果在这个dom元素下面，就不能在另外一个dom元素下面
+	BOM的概念 browser object model
+			  document object model
+	BOM和DOM的关系
+		DOM是BOM中间的一个对象
+		DOM所代表的核心上下文对象叫做document
+		document是DOM的核心上下文对象，它相当于一个公司
+		BOM所代表的核心上下文对象叫做window
+		window是BOM的核心上下文对象，它相当于一个集团
+		document这个核心对象是window这个核心对象中最重要的对象没有之一
+	BOM的API
+		alert、confirm、prompt
+		setTimeout(callback,time) //定时器
+			过time毫秒之后，执行callback，执行一次
+		setInterval(callback,time) //计时器
+			每过time毫秒之后，执行一次callback
+	BOM模型结构
+
+英文单词：
+	create[创建]、parent[父]、child[子]、append[追加]、inner[内部的]、outer[外部的]、browser[浏览器]、previous[上一个]、sibling[相邻的]
+作业：
+	请参考“作业”文件夹下的文档内容，并按时完成。
+
+做一家受人尊敬的企业，做一位受人尊敬的老师。  -by 动脑学院

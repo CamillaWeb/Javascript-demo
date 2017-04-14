@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   var http = "http://localhost:8080/myProject?a=1&b=2&c=344";
+	   var regex = /(([a-z_]+)=([^&]*))/g;
+	   while(regex.exec(http)){
+		   console.log("group1:"+RegExp.$1);//外面的大括号
+		   console.log("group2:"+RegExp.$2);//第一个小括号
+		   console.log("group3:"+RegExp.$3);//第二个小括号
+	   }
+	   //运行结果
+	   /*group1:a=1
+		 group2:a
+		 group3:1
+		 group1:b=2
+		 group2:b
+		 group3:2
+		 group1:c=344
+		 group2:c
+		 group3:344*/
+	</script>
+</body>
+</html>

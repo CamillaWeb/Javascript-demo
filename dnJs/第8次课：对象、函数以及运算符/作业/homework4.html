@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	    //创建一个人，这个人有一些特征和行为，特征有：姓名、年龄、性别、身高、体重等；行为有：吃饭、跑步、学习，除了这些功能他还可以计算加减乘除的能力等。以上代码要求写上注释进行说明（包括函数作用、参数、返回值等）
+		function plus(num1,num2){
+            return num1+num2;
+		}
+		
+		var camilla = {
+			name : "camilla",
+			age : 25,
+			sex : 0,
+			height : 161,
+			weight : 50,
+			eat : function(){
+			    alert("我正在吃饭");	
+			},
+			run : function(){
+			    alert("我正在跑步");	
+			},
+			study : function(){
+			    alert("我正在学习");	
+			},
+			plus : plus,
+			minus : function(num1,num2){
+				alert(num1-num2);
+			},
+			multiply : function(num1,num2){
+				alert(num1*num2);
+			},
+			divide : function(num1,num2){
+				alert(num1/num2);
+			}
+		}
+		alert(camilla.plus(3,4));
+		camilla.study();
+		camilla.multiply(3,5);
+		
+		
+	</script>
+</body>
+</html>

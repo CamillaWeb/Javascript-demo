@@ -1,0 +1,71 @@
+回顾：
+	无
+作业点评：
+	作业解答：菱形和空心三角形、包括扫雷
+学习要求：
+	完成作业和到课者加学分（学分制规则在VIP群共享中）
+逻辑思维：
+	逻辑题：扫雷
+知识点：
+	API的概念
+		API(Aplication Programming Interface,应用程序编程接口)，是一些预先定义（系统自带）的函数，目的是提供应用程序与开发人员基于某软件或者硬件得以访问的一组能力，而又无需访问源码，无需理解内部工作机制的细节
+		function sort(array,desc){
+			//实现排序的算法
+		}
+		A 实现sort这个功能，专门来实现算法的
+		  我不管你拿去做什么，我只知道你要传入这几个参数，就能够通过冒泡排序实现排序结果
+		  开发API的牛人
+
+		B 使用一个排序，专门是用来做业务逻辑的
+		  我不管你代码（算法）如何实现的，我只要你给我的结果是我想要的，我就直接拿过来用
+		  公司的程序员
+	API类型
+		首字母大写的函数 
+			例如：Number()
+				  String()
+				  Boolean()
+				  Object()
+				  Function()
+				  ...
+		首字母小写的函数
+				  alert()
+				  prompt()
+				  parseInt()
+				  substr()
+				  indexOf()
+				  sort()
+				  ....
+	    结论：首字母大写的函数，我们叫它 构造器函数，通常它是用来（通过new关键字）创建对象的
+	    * 只要看到了new关键字，那么后面的这个数据的地址一定在堆中
+	学习API方法
+		通过查API文档来学习http://www.w3school.com.cn/jsref/
+		* 不用全部记住
+		* 多查询API文档
+		* 记住常用的
+		* 就算记不住所有的，也要大概记住有哪些（不用记住它的函数名字）
+	数值API
+		num.toString():把数值变成字符串
+		num.toFixed(num):把数值变成num小数位的字符串（四舍五入）
+	字符串API
+		str.length属性:返回str字符串的字符个数
+		str.charAt(index):返回在指定位置的字符
+		str.indexOf(searchvalue):检索字符串
+		str.lastIndexOf(searchvalue):从后向前搜索字符串
+		str.match(regex):找到一个或多个正则表达式的匹配
+		str.replace(regex|str,target):替换与正则表达式匹配的子串
+		str.substr():从起始索引号提取字符串中指定数目的字符
+		str.substring():提取字符串中两个指定的索引号之间的字符
+		str.split():把字符串分割为字符串数组
+		str.toLowerCase():把字符串转换为小写
+		str.toUpperCase():把字符串转换为大写
+	Math工具
+	数组API
+	日期API
+	正则表达式API
+	
+英文单词：
+	length[长度]、concat[拼接]、index[索引]、replace[替换]、split[分割]、math[数学]、max[最大的]、min[最小的]、random[随机的]、round[圆的]、sort[排序]
+作业：
+	请参考“作业”文件夹下的文档内容，并按时完成。
+
+做一家受人尊敬的企业，做一位受人尊敬的老师。  -by 动脑学院

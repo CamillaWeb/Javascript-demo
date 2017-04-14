@@ -1,0 +1,43 @@
+回顾：
+	内存结构
+		栈：变量
+		堆：所有的对象 typeof x //object 
+		池：常量
+	正则表达式
+		/^\d$/ \w==[a-zA-Z0-9_] {2,} + * ？ .
+作业点评：
+	作业解答
+学习要求：
+	完成作业和到课者加学分（学分制规则在VIP群共享中）
+知识点：
+	正则表达式高级
+		regex.test 只帮助我们测试字符串，不会帮我们解析字符串
+		regex.exec 帮我们解析字符串
+	javascript目的是什么
+		客户端浏览器
+		DOM是浏览器内部管理树
+		javascript就是用来通过提供语法、API来操作浏览器的DOM，来实现和浏览器页面的交互
+	DOM的概念
+		document object model
+		HTML文本文档本身，相当于是一种语言（协议），浏览器内核能够解释它，最终通过解释完成把里面的代码全都加载到内存里去
+		DOM又称为DOM树
+		每一个元素（根、枝、叶）都称之为DOM元素，N多DOM元素通过它们的层级关系形成了DOM树
+		每个DOM元素（对象）都具备属性和行为
+		内存中的DOM模型和页面画布中的盒子是一一对应的
+	DOM在内存中的结构
+		请看代码中的内存图
+	一个DOM模型中有且只有一个body对象
+	DOM元素的基本的API
+		children 数组 儿子
+		parentNode DOM元素 老子
+		innerHTML DOM元素内部的HTML代码
+		getElementById 通过id属性查询dom模型中唯一一个dom元素
+		getElementsByTagName 通过标签名字获取所有该标签名的dom元素 数组
+	getElementsByClassName 通过class属性获取所有该class名字的dom元素 数组
+	write|writeln
+英文单词：
+	group[组]、document[文档]、model[模型]、element[元素]、tag[标签]、read[读]、write[写]、open[打开]、close[关闭]、get[获取]、set[设置]
+作业：
+	请参考“作业”文件夹下的文档内容，并按时完成。
+
+做一家受人尊敬的企业，做一位受人尊敬的老师。  -by 动脑学院

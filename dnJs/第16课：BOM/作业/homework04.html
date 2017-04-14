@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<style>
+li{ list-style:none;}
+</style>
+</head>
+
+<body>
+    <!--以上题为基础的前提之下新增一个用户需求，当用户点击追加的时候，往id为myList的ul中添加一个li元素，这个li元素里有三个span，第一个span存放序号（序号从1开始），第二个span存放用户输入的爱好，第三个存放一个按钮，按钮的文本是删除，当点击时让当前这个爱好li元素从ul中删除（remove方法移除DOM元素），并且重新排每个li的序号-->
+    <ul id="myList"></ul>
+    <input type="button" value="追加" onClick="appendItem()"/>
+	<script>
+       var myList = document.getElementById("myList");
+	   function appendItem(){
+		    var sport = prompt("你最喜欢的运动是?");
+			var li = document.createElement("li");
+            li.appendChild(addItem(myList.children.length+1));
+			li.appendChild(addItem(sport));	
+			li.appendChild(addItem("<input type='button' value='删除' onclick='delItem(this)'>"));	
+			myList.appendChild(li);	
+	   } 
+	   //删除、排序
+	   function delItem(removeItem){
+		   removeItem.parentNode.parentNode.remove();
+		   /*for(var i=0;i<myList.children.length;i++){
+			   myList.children[i].firstChild.innerHTML = i+1;
+		   }*/
+		   var next = removeItem.parentNode.parentNode.nextElementSibling;
+		   while(next){
+			   next.children[0].innerHTML -= 1; 
+			   next = removeItem.parentNode.parentNode.nextElementSibling;
+		   }
+	   }
+	   //创建span标签 
+	   function addItem(html){
+		  var span = document.createElement("span"); 
+		  span.innerHTML = html;
+		  return span;
+	   }	   
+
+	</script>
+</body>
+</html>

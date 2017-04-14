@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //字符串API有个replace方法，但是它只能替换一次，自己实现个replaceAll方法，让可以替换所有的字符串
+	   var str = "hello world str hello star";
+	   function replaceAll(str,oldStr,newStr){
+		   while(str.indexOf(oldStr) != -1){
+			   str = str.replace(oldStr,newStr);
+		   }  
+		   return str;
+	   }
+	   console.log(replaceAll(str,"hello","welcome"));
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+       //要有房并且有车，颜值必须上50，如果低于50的话，还有希望，看看存款有没有50w
+	   var star = {
+		   hasHouse : true,
+		   hasCar : true,
+		   face : 40,
+		   money : 300000
+       }
+	   var john = {
+		   hasHouse : true,
+		   hasCar : true,
+		   face : 60,
+		   money : 300000
+       }
+	   /*if(star.hasHouse && star.hasCar){
+		   if(star.face>=50 || star.money>=500000){
+			   alert("小伙子，我们谈谈吧");
+		   }else{
+		       alert("滚犊子"); 
+		   }
+	   }else{
+		   alert("滚犊子");
+	   }*/
+	   function whos(human){
+		   if(human.hasHouse && human.hasCar){
+			   if(human.face>=50 || human.money>=500000){
+				   alert("小伙子，我们谈谈吧");
+			   }else{
+				   alert("滚犊子"); 
+			   }
+		   }else{
+			   alert("滚犊子");
+		   }
+	   }
+	   whos(star);
+	   whos(john);
+	</script>
+</body>
+</html>

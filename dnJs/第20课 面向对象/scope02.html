@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+  <script>
+     var i = 10;
+	 var j;
+	 function test(){
+		 var i,j;
+		 i = 20;
+		 j = 30;
+		 function test(){
+			i = 1;
+			j = 40; 
+		 }
+		 test();
+		 console.log(i);//1
+		 console.log(j);//40
+	 }
+	 test();//1 40
+	 console.log(i);//10
+	 console.log(j);//undefined
+  </script>
+</body>
+</html>

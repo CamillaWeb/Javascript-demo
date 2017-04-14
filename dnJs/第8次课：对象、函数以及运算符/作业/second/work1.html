@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //三角形面积
+	   function area(s,h){
+      return s*h/2;
+				}
+				console.log(area(4,4));
+
+	   //平均数
+	   function average(a,b,c) {
+        //console.log(arguments.length);
+							return (a+b+c)/arguments.length;
+    }
+    console.log(average(1,4,4));
+
+	   //* 输入一数字作为秒数，按小时，分钟，秒的格式输出。(x:x:x)。
+	   function time(num){
+	       var h = parseInt(num/3600);
+	       var s = parseInt(num%3600/60);
+	       var m = num%3600%60;
+	       return h+":"+s+":"+m;
+    }
+    console.log(time(5874));
+
+	   //赋值运算
+    function oper(num){
+       num += 10;
+       num -= 9;
+       num *= 8;
+       num /= 7;
+       num %= 5;
+       return num;
+    }
+    console.log(oper(20));
+</script>
+</body>
+</html>

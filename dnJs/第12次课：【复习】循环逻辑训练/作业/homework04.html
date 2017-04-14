@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //倒直角三角形
+	   var num;
+	   do{
+		   num = Number(prompt("请输入行数"));  
+	   }while(!(num>=0 && num<15));
+	   
+	   for(var i=0;i<num;i++){
+		   for(var j=0;j<num;j++){
+			   document.write(j<i?"&nbsp;":"*");
+		   }
+		   document.write("<br>");
+	   }
+	   document.write("<br>");
+
+	   for(var i=0;i<num;i++){
+		   for(var j=0;j<num;j++){
+			   document.write(j<num-i-1?"&nbsp;":"*");
+		   }
+		   document.write("<br>");
+	   }
+	</script>
+</body>
+</html>

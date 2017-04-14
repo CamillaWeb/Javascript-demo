@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<style>
+html,body{ width:100%; height:100%;}
+#box{ width:100px; height:100px; background:#ccc; border-radius:50%; position:fixed; left:0; top:0;}
+</style>
+</head>
+
+<body>
+    <!--定义一个高度和宽度都为100像素的球形盒子（border-radius实现球形），通过生成随机数让这个球在浏览器中随机移动，移动完后再继续生成继续随机移动。-->
+    <div id="box"></div>
+	<script>
+       var oBox = document.getElementById("box");
+	   var maxw = document.body.offsetWidth-oBox.offsetWidth;
+	   var maxh = document.body.offsetHeight-oBox.offsetHeight;
+	   setInterval(function(){
+           oBox.style.left = (Math.ceil(Math.random()*1000%maxw))+"px";  
+           oBox.style.top = (Math.ceil(Math.random()*1000%maxh))+"px"; 
+	   },1000); 
+	</script>
+</body>
+</html>

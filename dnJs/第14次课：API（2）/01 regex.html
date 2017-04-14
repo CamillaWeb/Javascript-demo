@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //i属性 忽略大小写
+	   //var regex = new RegExp("star@qq.com","i");  //第一种语法
+	   var regex = /star@qq.com/i; //第二种语法 推荐
+	   var target = "star@qq.COM";
+	   console.log(regex.test(target));
+	   
+	   //或者
+	   /*if(target.match(regex)){
+		   console.log("匹配成功");  
+	   }else{
+		   console.log("匹配失败"); 
+	   } */ 
+	</script>
+</body>
+</html>

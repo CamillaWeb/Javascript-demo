@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	    var human1 = {
+		    height : 188,
+			hasCar : true,
+			hasHouse : true,
+			faceScore : 70	
+		};
+	    var human2 = {
+		    height : 188,
+			hasCar : true,
+			hasHouse : true,
+			faceScore : 50	
+		};
+		
+	    function isOk(human){
+			var ok = human.height >= 180 && human.hasCar && human.hasHouse && human.faceScore >= 70;
+			return ok;
+		}
+		
+		alert(isOk(human1)); //true
+		alert(isOk(human2)); //false
+	</script>
+</body>
+</html>

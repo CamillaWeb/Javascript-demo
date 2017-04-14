@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <ul id="oUl">
+      <li>苹果</li>
+      <li>香蕉</li>
+      <li>梨子</li>
+    </ul>
+    <input type="button" value="按钮" onClick="appendEle()">
+
+<script>
+   function appendEle(){
+	   var ele = document.createElement("li");
+	   var txt = document.createTextNode("橘子");
+	   ele.appendChild(txt);
+	   document.getElementById("oUl").appendChild(ele);
+   }
+</script>
+</body>
+</html>

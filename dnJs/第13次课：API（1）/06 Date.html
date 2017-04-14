@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	    //Date()
+	    console.group("Date()方法可返回当天的日期和时间。");
+        console.log(Date());//Tue Oct 25 2016 10:03:56 GMT+0800 (中国标准时间)
+		console.groupEnd();
+
+	    //getDate()
+	    console.group("getDate()方法可返回月份的某一天。");
+		var d = new Date();
+        console.log(d.getDate());//当天几号
+		
+		var birthday = new Date("July 21, 2016 10:15:00");
+        console.log(birthday.getDate());//21
+		console.groupEnd();
+
+	    //getDay()
+	    console.group("getDay()方法可返回表示星期的某一天的数字。");
+        var d = new Date();
+		console.log(d.getDay());//当天周几
+		
+		var weekData = new Array();
+		weekData[0] = "周日",
+		weekData[1] = "周一",
+		weekData[2] = "周二",
+		weekData[3] = "周三",
+		weekData[4] = "周四",
+		weekData[5] = "周五",
+		weekData[6] = "周六"
+		console.log("今天是"+weekData[d.getDay()]);
+		console.groupEnd();		
+
+	    //getMonth()
+	    console.group("getMonth()方法可返回表示月份的数字。");
+        var d = new Date();
+		console.log(d.getMonth());//几月
+		
+		var monthData = ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月",];
+		console.log("这个月是"+monthData[d.getMonth()]);
+		console.groupEnd();	
+
+	    //getFullYear()
+	    console.group("getFullYear()方法可返回一个表示年份的 4 位数字。");
+        var d = new Date();
+		console.log(d.getFullYear());//哪一年
+
+		var born = new Date("July 21, 2016 01:15:00");
+		console.log("今年是" + born.getFullYear());
+		console.groupEnd();	
+
+	    //getHours()、getMinutes() 、getSeconds()
+		//getMilliseconds()【毫秒】
+	    console.group("getHours()方法可返回时间的小时字段。");
+        var d = new Date();
+		console.log(d.getHours()+"时"+d.getMinutes()+"分"+d.getSeconds()+"秒");	
+		console.groupEnd();
+		
+	    //setDate()、setMonth()、setFullYear()、setHours()、setMinutes()、setSeconds()、setMilliseconds()、setTime()
+	    console.group("setDate()方法用于设置一个月的某一天。");
+		var d = new Date();
+		d.setDate(23);
+        console.log(d);
+		console.groupEnd();		
+    </script>
+</body>
+</html>

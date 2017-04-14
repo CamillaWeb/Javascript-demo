@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <!--拆炸弹游戏，倒计时10秒，每隔两秒拆一次（拆成功的几率是20%），如果拆成功则定时器技术，显示拆弹成功，否则继续隔两秒拆一次，如果0秒还没拆完则爆炸。。。
+        提示：20%几率生成的办法是 生成1-10之间的随机值，如果1-2就是20%内-->
+    <div id="box">炸弹将在10秒后爆炸！</div>
+	<script>
+        var oBox = document.getElementById("box");
+		var i=10;
+		var time = setInterval(function(){
+			i--;
+			if(i==0){
+				oBox.innerHTML = "Boom!";
+				clearInterval(time);
+		    }else{
+				oBox.innerHTML = "炸弹将在"+i+"秒后爆炸！";
+                action();
+			}
+	    },1000);
+		
+		function action(){
+			var time2 = setInterval(function(){
+				var rando = Math.random()*4;
+				if(rando>=1 && rando<=2){
+					oBox.innerHTML = "在最后"+i+"秒拆除成功！";
+					clearInterval(time2);
+					clearInterval(time);
+				}else{
+					time2;
+				}
+			},2000);
+		}
+	</script>
+</body>
+</html>

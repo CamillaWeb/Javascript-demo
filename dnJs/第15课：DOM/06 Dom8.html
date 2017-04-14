@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+    <div id="myDiv">
+        <h1>this is h1</h1>
+    </div>
+    <span id="mySpan">
+        <h2>this is h2</h2>
+        <h3>this is h3</h3>
+    </span>
+	<script>
+	   //每一个dom元素在内存中是唯一的，如果在这个dom元素下面，就不能在另外一个dom元素下面
+       var myDiv = document.getElementById("myDiv");
+	   var mySpan = document.getElementById("mySpan");
+	   
+	   var myP = document.createElement("p");  //创建p标签
+	   var text = document.createTextNode("文本文本"); //创建文本节点
+	   myP.appendChild(text);//把文本节点追加到创建的p标签中
+	   myDiv.appendChild(myP);//把p追加到div中
+	   
+	   var myH2 = mySpan.getElementsByTagName("h2")[0];
+	   myDiv.appendChild(myH2);//移动位置
+	   
+	   console.log(myDiv.nextElementSibling);//获取当前dom元素的相邻的下一个dom元素
+	   console.log(mySpan.previousElementSibling);//获取当前dom元素的相邻的上一个dom元素
+	   
+	</script>
+</body>
+</html>

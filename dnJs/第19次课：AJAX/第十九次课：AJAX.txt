@@ -1,0 +1,72 @@
+回顾：
+	事件对象event
+		Event  onload
+		MouseEvent   onmouseXXX  onclick
+		KeyboradEvent   onkeyXXX
+		WheelEvent  onmousewheel
+	事件冒泡机制
+		cancelBubble=true来取消冒泡
+		*但是早期的IE（678）早期的Opera不支持cancelBubble，需要用event.stopPropagation();
+作业点评：
+	作业解答
+学习要求：
+	完成作业和到课者加学分（学分制规则在VIP群共享中）
+知识点：
+	B/S:客户端主动去请求（request）而服务器被动响应（response）
+	AJAX的概念，即“Asynchronous Javascript And XML” 
+		通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+		传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面或者使用iframe。
+	本地环境和服务器环境
+	AJAX写法
+	浏览器兼容
+		if(window.ActiveXObject){
+			//ActiveX是浏览器的插件
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");//IE 678 OPEAR OLD
+		}else if(window.XMLHttpRequest){
+			xmlHttp = new XMLHttpRequest();//NEW
+		}
+	状态码
+		readyState	
+			存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+			0: 请求未初始化
+			1: 服务器连接已建立
+			2: 请求已接收
+			3: 请求处理中
+			4: 请求已完成，且响应已就绪
+		status	
+			200: "OK"
+			404: 未找到页面
+	为什么响应有文本和XML格式
+		因为当下最流行的数据交互格式，一种是json（responseText）,另外一种是XML（responseXML）
+		* JSON.parse(xmlHttp.responseText)
+	NodeJs搭建服务器环境
+		安装node（建议不要更改安装目录）
+		打开cmd输入node -v查看版本，如果查看得到代表安装成功
+		输入命令npm i -g express
+		输入命令npm i -g expre-generator
+		在桌面创建一个server
+		打开cmd命令行，cd 桌面的server目录，回车
+		进入server目录，输入express server
+		再进入server/server目录，输入npm install
+		讲代码复制到public目录下
+		通过npm start启动服务器
+		最后打开浏览器在地址栏输入http://localhost:3000/ajax.html
+	跨域JSONP
+		什么是域 id地址加上端口号（例：http://192.168.0.146:3000/）
+		什么是JSONP 
+			本质跟AJAX没有任何关系
+			另外一种服务器和非服务器资源之间的潜规则
+		结论：script标签的src属性是可以实现跨域的
+			JSONP暴露出来的数据按照我的经验来讲一定不是非常机密的数据
+	form提交和ajax提交比较
+		form：全局表单提交，整个页面刷新
+			* a的href
+			* window.location.href
+		ajax：异步局部提交，局部页面刷新
+		通常提交了数据之后要跳转页面或者刷新整个页面的时候就不用ajax
+英文单词：
+	before[之前]、after[之后]、status[状态]、asynchronous[异步的]、ready[准备好]、request[请求]、response[响应]
+作业：
+	请参考“作业”文件夹下的文档内容，并按时完成。
+
+做一家受人尊敬的企业，做一位受人尊敬的老师。  -by 动脑学院

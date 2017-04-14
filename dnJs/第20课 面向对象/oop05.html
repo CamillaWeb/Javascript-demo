@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+<body>
+<script>
+     //生物类
+     function Biology(){}
+	 Biology.prototype.live = function(){
+	    console.log("有生命力");	
+	 }
+	 
+	 //动物
+	 function Animate(){}
+	 Animate.prototype = new Biology();//继承Biology
+     Animate.prototype.eat = function(){  //扩展
+	    console.log("可以吃");
+	 }
+	 
+	 //人类
+	 function Human(){}
+	 Human.prototype = new Animate();//继承Animate
+	 
+	 var aa = new Biology();
+	 aa.live();
+	 
+	 var bb = new Animate();
+	 bb.eat();
+	 bb.live();
+	 
+	 var cc = new Human();
+	 cc.eat();
+	 cc.live();	 
+	 
+	 console.log(aa instanceof Object);//true
+	 console.log(bb instanceof Biology);//true
+	 console.log(cc instanceof Animate);//true
+</script>
+</body>
+</html>

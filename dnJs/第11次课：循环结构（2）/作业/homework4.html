@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //要用户连续输入10个数字，将输入的数字保存在数组中，最终通过冒泡算法让数组中最大的值成为数组中最后一个值
+	   var num,arr = [];
+	   var container;
+	   for(var i=0;i<=2;i++){
+		   num = Number(prompt("请输入数组第"+i+"数字")); 
+		   arr[i] = num;
+	   }
+	   console.log(arr);
+	   
+	   //最大值放最后
+	   for(var i=0;i<arr.length-1;i++){
+		   if(arr[i]>arr[i+1]){
+			  container = arr[i];  
+			  arr[i] = arr[i+1];
+			  arr[i+1] = container; 
+		   }  
+	   }
+	   console.log(arr);
+	</script>
+</body>
+</html>

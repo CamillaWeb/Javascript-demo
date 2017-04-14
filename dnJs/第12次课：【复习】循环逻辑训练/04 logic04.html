@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+<style>
+body,html{ width:100%; height:100%; padding:0; margin:0;}
+#box{ width:220px;margin:0 auto; padding-top:100px;}
+#box span{ display:inline-block; width:18px; height:18px; line-height:18px; text-align:center; border:1px #ccc solid; background:#6FB7FF; float:left; margin:1px; font-size:12px;}
+#box span:hover{ background:#FC6; cursor:pointer;}
+#box span.boom{ background:#272727;}
+#box span.other{ background:#fff;}
+</style>
+</head>
+
+<body>
+    <div id="box"></div>
+	<script>
+	  	 var arr = [
+		    [0,0,1,0,0,0,0,1,0,0],
+			[0,0,0,0,1,0,0,0,0,0],
+			[0,0,0,0,0,0,0,0,0,0],
+			[0,0,0,0,1,0,0,1,0,0],
+			[0,0,0,0,0,0,0,0,0,0],
+			[0,0,0,0,1,0,0,0,0,0],
+			[0,0,0,0,0,0,0,1,0,0],
+			[0,1,0,0,0,0,0,0,0,0],
+			[0,0,0,0,0,0,0,0,1,0],
+			[1,0,0,0,0,0,0,0,0,0]
+		 ];
+		 function drawMap(){
+			 var html = "";
+			 for(var i=0;i<arr.length;i++){
+				 for(var j=0;j<arr[i].length;j++){
+					 html += "<span onclick='clickBlock("+i+","+j+",this)'></span>";
+				 }
+				 html += "<br>";
+			 }
+			 box.innerHTML = html;	
+		 }
+		 drawMap();
+		 
+		 function clickBlock(i,j,block){
+			 if(arr[i][j]===1){
+				 block.className += "boom";
+				 alert("你点到雷了,游戏结束！");
+				 drawMap();
+		     }else{
+				var count = 0;
+				for(var x=i-1;x<=i+1;x++){
+					for(var y=j-1;y<=j+1;y++){
+						if(i<0 || y<0)continue;
+						if(arr[x] && arr[y] && arr[x][y] === 1){
+							count++;
+						}
+					}
+			    }
+				block.className = "other"; 
+				block.innerHTML = count?count:"";	
+			 }
+	     }	     
+	</script>
+</body>
+</html>

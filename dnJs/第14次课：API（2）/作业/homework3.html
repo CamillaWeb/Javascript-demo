@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //定义一个函数名叫isUserName，传入用户输入的字符串，判断字符串是否一个合理的用户名，用户名的规则是1-30位以字母开头的字符串，允许包含字母数字和下划线
+       function isUserName(name){
+		   var regex = /^[a-zA-Z]\w{1,29}$/;
+		   return regex.test(name);
+	   }
+	   console.log(isUserName("eee_eiit9302AKJ"));//true
+	   console.log(isUserName("55ee_eiit9302AKJ"));//false
+	</script>
+</body>
+</html>

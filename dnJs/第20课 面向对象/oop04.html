@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+<body>
+<script>
+        //小头爸爸带大头儿子去吃饭
+        //对象 小头爸爸、大头儿子、饭
+        //类 人类 名字 带() 吃()
+        //  粮食 名字
+        //修改代码风险很大，尽量不修改代码，新增代码
+		function Human(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		Human.prototype = new Object();//可写可不写  一切事物都是对象
+		Human.prototype.work = function(){
+		    if(this.age<18){
+				console.log(this.name+"正在学习");
+			}else{
+				console.log(this.name+"正在工作赚钱");	
+			}	
+		}
+		Human.prototype.showAge = function(){
+			console.log(this.name+"今年"+this.age+"岁");	
+		}
+		var xtbb = new Human("小头爸爸",40);
+		var dtez = new Human("大头儿子",17);
+		xtbb.showAge();
+		xtbb.work();
+		dtez.showAge();
+		dtez.work();
+</script>
+</body>
+</html>

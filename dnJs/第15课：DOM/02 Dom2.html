@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	    var father = {name:"小头爸爸",age:30};
+		var son = {name:"大头儿子",name:5,father:father};
+		father.son = son;
+		console.log(son.father.name);//小头爸爸
+		console.log(father.son.name === son.name);//true
+	</script>
+</body>
+</html>

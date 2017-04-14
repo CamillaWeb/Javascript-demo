@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	   //定义一个函数名叫isPostalcode，传入用户输入的字符串，判断字符串是否一个合理的邮政编码，邮政编码的规则是6位数字组成
+	   function isPostalcode(code){
+		   var regex = /^\d{6}$/;
+		   return regex.test(code);
+	   }
+	   console.log(isPostalcode("234857"));//true
+	   console.log(isPostalcode("r34857"));//false
+	   
+	   //定义一个函数名叫isMobileNumber，传入用户输入的字符串，判断字符串是否一个合理的手机号码，手机号码的规则是1开头的11位数字
+	   function isMobileNumber(number){
+		   var regex = /^\d{11}$/;
+		   return regex.test(number);
+	   }
+	   console.log(isMobileNumber("18394877655"));//true
+	   console.log(isMobileNumber("183t487_655"));//false
+	   
+	   //定义一个函数名叫isPhoneNumber，传入用户输入的字符串，判断字符串是否一个合理的座机号码，手机号码的规则是四个数字抬头，一个”-“，后面7个数字结束
+	   function isPhoneNumber(phone){
+		   var regex = /^\d{4}-\d{7}$/;
+		   return regex.test(phone); 
+	   }
+	   console.log(isPhoneNumber("0397-7386588"));//true
+	   console.log(isPhoneNumber("039773-86588"));//false
+	</script>
+</body>
+</html>

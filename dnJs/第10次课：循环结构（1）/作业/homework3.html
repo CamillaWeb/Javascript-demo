@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+       //用户输入一个0-3之间的数值，如果是0输出上，1输出下，2输出左，3输出右，否则其他的输出“您输入的方向不正确”
+	   var num = Number(prompt("请输入方向","0-3之间的值"));
+	   
+	   var DIR = {
+		   0 : "上",
+		   1 : "下",   
+		   2 : "左",   
+		   3 : "右"   
+	   }
+	   
+	   switch(num){
+		   case 0:
+		   case 1:
+		   case 2:
+		   case 3:
+		     console.log("方向向"+DIR[num]);
+			 break;
+		   default:
+		     console.log("您输入的方向不正确");			 			 			 			 
+	   }
+	   	   
+	</script>
+</body>
+</html>

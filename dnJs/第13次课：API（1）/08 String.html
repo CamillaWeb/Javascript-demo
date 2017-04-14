@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	    //length
+	    console.group("length属性可返回字符串中的字符数目。");
+        var str = "hello world";
+		console.log(str.length);//11
+		console.groupEnd();
+		
+	    //charAt()
+	    console.group("charAt()方法可返回指定位置的字符。第一个字符的下标是 0");
+        var str = "hello world";
+		console.log(str.charAt(6));//w
+		console.groupEnd();
+		
+	    //charCodeAt()
+	    console.group("charCodeAt()方法可返回指定位置的字符的 Unicode 编码");
+        var str = "hello world";
+		console.log(str.charCodeAt(6));//119 w的Unicode 编码
+		console.groupEnd();	
+		
+	    //concat()
+	    console.group("concat()方法用于连接两个或多个字符串。");
+        var str = "hello world";
+		var str1 = " star"
+		console.log(str.concat(str1));//hello world star
+		console.log(str+str1);//hello world star
+		console.groupEnd();	
+		
+	    //indexOf()
+	    console.group("indexOf()方法可返回某个指定的字符串值在字符串中首次出现的位置。第一个字符的下标是 0");
+        var str = "hello world star welcome";
+		console.log(str.indexOf('star'));//12
+		console.log(str.indexOf('Star'));//-1  区分大小写，如果未找到返回-1
+		console.groupEnd();		
+				
+	    //lastIndexOf()
+	    console.group("lastIndexOf()方法可返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索。");
+        var str = "hello world star welcome world hello";
+		console.log(str.lastIndexOf('world'));//25
+		console.groupEnd();	
+				
+	    //match()
+	    console.group("match()方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。");
+        var str = "hello world";
+		console.log(str.match('world'));//["world", index: 6, input: "hello world"]
+		console.log(str.match('World'));//null
+		console.groupEnd();		
+				
+	    //replace()
+	    console.group("replace()方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。");
+        var str = "hello world";
+		console.log(str.replace("world","star"));//hello star
+		console.groupEnd();	
+						
+	    //search()
+	    console.group("search()方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。");
+        var str = "hello world";
+		console.log(str.search("world"));//6 区分大小写，如果未找到返回-1
+		console.groupEnd();	
+								
+	    //stringObject.slice(start,end)（不包括 end）
+		//如果是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符，-2 指倒数第二个字符，以此类推。
+	    console.group("slice()方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。");
+        var str = "hello world";
+		console.log(str.slice(1,3));//el
+		console.log(str.slice(1));//ello world
+		console.groupEnd();	
+								
+	    //stringObject.split(separator,howmany)
+	    console.group("split()方法用于把一个字符串分割成字符串数组。");
+        var str = "hello world star welcome";
+		console.log(str.split(""));//["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d", " ", "s", "t", "a", "r", " ", "w", "e", "l", "c", "o", "m", "e"]
+		console.log(str.split(" ",3));//["hello", "world", "star"]
+		console.groupEnd();	
+								
+	    //stringObject.substr(start,length)
+	    console.group("substr()方法可在字符串中抽取从 start 下标开始的指定数目的字符。");
+        var str = "hello world star welcome";
+		console.log(str.substr(2));//llo world star welcome
+		console.log(str.substr(2,3));//llo
+		console.groupEnd();	
+								
+	    //stringObject.substring(start,stop)
+	    console.group("substring()方法用于提取字符串中介于两个指定下标之间的字符。");
+        var str = "hello world star welcome";
+		console.log(str.substring(2));//llo world star welcome
+		console.log(str.substring(2,3));//l
+		console.groupEnd();	
+										
+	    //toLowerCase()、toUpperCase()
+	    console.group("toLowerCase()方法用于把字符串转换为小写;toUpperCase()方法用于把字符串转换为大写。");
+        var str = "Hello World";
+		console.log(str.toLowerCase());//hello world
+		console.log(str.toUpperCase());//HELLO WORLD
+		console.groupEnd();																					
+    </script>
+</body>
+</html>

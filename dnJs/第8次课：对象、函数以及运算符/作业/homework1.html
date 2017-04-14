@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	  //输入高和底，计算三角形的面积（底*高/2）
+	  function triangle(a,h){
+		  var area = a*h/2;
+		  return area;
+	  }
+	  var a1 = 2,h1 = 4;
+	  var s = triangle(a1,h1);
+	  alert(s);
+	  
+	  //输入学生三科的成绩，计算出平均分
+	  function average(ave01,ave02,ave03){
+		  var scores = (ave01+ave02+ave03)/3;
+		  return scores;
+	  }
+	  var score = average(80,90,100);
+	  alert(score);
+	  
+	  //输入一数字作为秒数，按小时，分钟，秒的格式输出。(x:x:x)。
+	  function time(num){
+		  var hour = parseInt(num/3600);
+		  var minutes = parseInt(num%3600/60);
+		  var second = num%3600%60; 
+		  return hour + ":" + minutes + ":" + second;
+	  }
+	  alert(time(3600));
+	</script>
+</body>
+</html>

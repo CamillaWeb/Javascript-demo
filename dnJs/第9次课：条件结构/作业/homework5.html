@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+	    /*输入一个年份（如：2016），计算其年份是平年还是闰年。
+		 *提示  闰年的计算规则如下：
+		 闰年能被4整除且不能被100整除，或能被400整除。*/
+
+		var year = 1900;
+		if((year%4 === 0 && year%100 != 0) || year%400===0){
+			alert(year+"年是闰年");
+		}else{
+			alert(year+"年是平年");
+		}
+	</script>
+</body>
+</html>

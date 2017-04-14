@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS</title>
+</head>
+
+<body>
+	<script>
+       var day = Number(prompt("今天周几？","请输入0-6直接的值"));
+
+	   /*switch(day){
+		   case 0:
+		      alert("今天周日");
+			  break;
+		   case 1:
+		      alert("今天周1");
+			  break;
+		   case 2:
+		      alert("今天周2");
+			  break;
+		   case 3:
+		      alert("今天周3");
+			  break;
+		   case 4:
+		      alert("今天周4");
+			  break;
+		   case 5:
+		      alert("今天周5");
+			  break;
+		   case 6:
+		      alert("今天周6");
+			  break;
+		   default:
+		      alert("输入有误");			  			  			  			  			  			  
+	   }*/
+       
+	   //优化，没有break，case会一直执行下去
+	   switch(day){
+		   case 0:
+		   case 1:
+		   case 2:
+		   case 3:
+		   case 4:
+		   case 5:
+		   case 6:
+		      alert("今天周"+(day===0 ? "日" : day));
+			  break;
+		   default:
+		      alert("输入有误");			  			  			  			  			  			  
+	   }  
+	</script>
+</body>
+</html>
